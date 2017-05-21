@@ -4,6 +4,8 @@ label niflheim:
 
     "\"I'm on the pilgrim's trail. I've just been to Tenebrae - now I'm headed back home to Niflheim.\""
 
+    prompto "Niflheim, huh?"
+
     menu:
 
         "Tell him you like Niflheim.":
