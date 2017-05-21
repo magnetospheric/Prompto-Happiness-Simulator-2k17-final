@@ -1,10 +1,12 @@
 label niflheim:
 
-    prompto "So what are you doing here, then?"
+    prompto "So, your turn. What are you doing here, then?"
 
     "\"I'm on the pilgrim's trail. I've just been to Tenebrae - now I'm headed back home to Niflheim.\""
 
     prompto "Niflheim, huh?"
+
+    "He doesn't sound very enthused."
 
     menu:
 
@@ -27,7 +29,7 @@ label hate_niflheim:
     jump to_mountain_haven
 
 
-label to_mountain_haven
+label to_mountain_haven:
 
     "\"So, are you headed to Niflheim or something?\""
 
@@ -48,3 +50,5 @@ label to_mountain_haven
     # if he has low / high happiness, say slightly different things here
     "You both start the long trek towards the mountains. The snowy plains don't seem nearly as isolating now that you're walking with him. And he seems happy to have company - or so the contented smile plastered across his face would indicate."
     "You both start the long trek towards the mountains. The snowy plains don't seem nearly as isolating now that you're walking with him. Surely he feels the same, because although he's guarded, hand hovering near his gun, he still asked you to join him."
+
+    jump human

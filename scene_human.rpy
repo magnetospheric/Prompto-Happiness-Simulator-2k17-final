@@ -69,7 +69,7 @@ label camera:
 
 label final_doubts:
 
-    prompto "You know, all those times when I said this was like a real-life RPG, I didn't actually expect it to have a, y'know, major character death. Or a deep backstory arc. Where you find out the character's tragic past or whatever. It's not fun when it happens to yourself."
+    prompto "You know, all those times when I said this was like a real-life RPG, I didn't actually expect it to have a, y'know, major character death. Or a deep backstory arc. Where you find out the character's tragic past or whatever. It's not fun when it happens to you."
 
     "He smiles, and blinks the tears away from his eyes."
 
@@ -77,7 +77,7 @@ label final_doubts:
 
     prompto "I probably sound like a stuck record by now, but ... I didn't want any of this to happen."
 
-    "He looks pretty upset"
+    "He looks pretty upset..."
 
     menu:
 
@@ -97,16 +97,23 @@ label final_doubts:
 
             jump no_hug
 
-
-"It's clear you're doing your best. And that's all a friend could ask for."
-
 label hug:
+
+    "You stop moving forward."
+
+    "\"Hey.\" You don't speak harshly at all, but the urgency in your voice makes him stop too."
+
+    "\"You don't sound like a stuck record.\" And you hug him tight. Your hands are in a non-threatening position across his back and shoulders, and you simply focus on pouring out compassion, ready to stop should he give any indication he's uncomfortable. You barely know this man, but you can't stand to see him beat himself up."
 
     "He leans into the hug."
 
-    "He seems to really appreciate the physical contact"
+    "You think you detect a slight sniffle as he buries his face in the crook of your shoulder. He seems to really appreciate the physical contact."
 
     $ happiness += 2
+
+    "When he breaks contact, his eyes are a little misty, but he's happy."
+
+    prompto "Whew! Uh, that wasn't what I expected, but it... it was nice. Thanks."
 
     menu:
 
@@ -117,6 +124,8 @@ label hug:
         ""
 
 label comfort:
+
+    "It's clear you're doing your best. And that's all a friend could ask for."
 
     $ happiness += 1
 

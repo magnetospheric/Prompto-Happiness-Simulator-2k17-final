@@ -5,6 +5,8 @@ label start:
     # set my starting variables:
     $ happiness = 0
 
+    $ prompto_name = "Stranger"
+
     # set the scene
     scene bg snowy_plains
     with fade
@@ -17,7 +19,7 @@ label start:
 
     "The sun is high, reflecting on the crystalline ground, and at first you think you're all alone, but then you spot a figure moving amid the distant sunlit shimmers."
 
-    "Are they also on a pilgrimage? You pick up speed, anxious to talk to another human being. The route from Tenebrae to Gralea is long and lonely for those not taking the train."
+    "Who could be out here? \n Are they also on a pilgrimage? \n You pick up speed, anxious to talk to another human being. The route from Tenebrae to Gralea is long and lonely for those not taking the train."
 
     show prompto downcast at left
     with dissolve

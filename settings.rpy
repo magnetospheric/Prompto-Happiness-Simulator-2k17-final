@@ -1,5 +1,6 @@
 #### Characters ####
-define prompto = Character('Prompto', color="#fff2b5") # prompto has a light yellow colour
+#define prompto = Character('Prompto', color="#fff2b5") # prompto has a light yellow colour
+define prompto = DynamicCharacter('prompto_name', color="#fff2b5")
 
 #### Character Images ####
 # submissive
