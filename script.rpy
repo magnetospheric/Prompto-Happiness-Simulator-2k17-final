@@ -11,3 +11,27 @@
 # -- scene_03_niflheim.rpy
 # -- scene_04_human.rpy
 # -- scene_05_campfire.rpy
+
+
+#### SPLASHSCREEN ####
+
+image producer = "images/logos/producer.png"
+image author = "images/logos/author.png"
+image title = "images/logos/title.png"
+
+label splashscreen:
+    scene black
+    with Pause(1)
+
+    #play sound "ping.ogg"
+
+    show producer with dissolve
+    with Pause(2)
+
+    scene author with dissolve
+    with Pause(2)
+
+    scene title with dissolve
+    with Pause(2)
+
+    return
