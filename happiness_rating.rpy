@@ -10,12 +10,14 @@ init python:
         # --- Giselle's Love Bar -------
         if show_happiness:
             ui.frame(
-                xalign = 0.5, #centered
-                ypos = 400,) #400 px Down from the Top
+                #xalign = 0.9, #centered
+                xalign = 0.96,
+                ypos = 0.04,
+            )
 
             ui.vbox(xalign = 0.5)
-            ui.text ("Happiness level: %d" %happiness,
-                xalign = 0.5)
+            ui.text ("HAPPINESS",
+                xalign = 0.0)
             ui.bar(max_happiness, happiness,
                 style="my_bar")
 
@@ -47,3 +49,5 @@ init -5 python:
     style.my_bar.thumb = "ui/thumb.png"
     style.my_bar.thumb_shadow = None
     style.my_bar.thumb_offset = 5
+
+    style.my_bar.font = "fonts/AvantGarde-Book.ttf"

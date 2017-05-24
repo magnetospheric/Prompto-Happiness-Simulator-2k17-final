@@ -20,12 +20,23 @@ init -1 python hide:
     ## This controls the title of the window, when Ren'Py is
     ## running in a window.
 
-    config.window_title = u"Prompto Happiness Simulator 2k17"
+    config.window_title = "Prompto Happiness Simulator 2k17"
 
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
     config.name = "Prompto Happiness Simulator 2k17"
     config.version = "0.0"
+
+    #########################################
+    # Fonts
+
+    # define gui.text_color = "#402000"
+    #
+
+    #
+    # define gui.text_size = 33
+    #
+    # define gui.name_text_size = 45
 
     #########################################
     # Themes
@@ -107,10 +118,10 @@ init -1 python hide:
     ## Padding is space inside the window, where the background is
     ## drawn.
 
-    # style.window.left_padding = 6
-    # style.window.right_padding = 6
-    # style.window.top_padding = 6
-    # style.window.bottom_padding = 6
+    style.window.left_padding = 4
+    style.window.right_padding = 4
+    style.window.top_padding = 4
+    style.window.bottom_padding = 4
 
     ## This is the minimum height of the window, including the margins
     ## and padding.
@@ -162,7 +173,7 @@ init -1 python hide:
 
     ## The file containing the default font.
 
-    # style.default.font = "DejaVuSans.ttf"
+    style.default.font = "fonts/Avenir-Light.ttf"
 
     ## The default size of text.
 
