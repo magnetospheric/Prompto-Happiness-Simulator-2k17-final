@@ -356,7 +356,9 @@ screen main_menu():
 
     ## This empty frame darkens the main menu.
     frame:
-        pass
+        xalign 0.0
+        ypos 568
+        background "ui/main_menu_bg.png"
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
