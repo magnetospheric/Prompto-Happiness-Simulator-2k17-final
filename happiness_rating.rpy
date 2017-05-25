@@ -28,7 +28,7 @@ init python:
 
 init -2 python:
     happiness=0
-    max_happiness = 150
+    max_happiness = 20
 
 init -5 python:
     #custom bar

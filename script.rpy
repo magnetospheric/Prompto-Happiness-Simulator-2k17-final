@@ -1,4 +1,4 @@
-﻿# script for Prompto Happiness Simulator 2k17
+# script for Prompto Happiness Simulator 2k17
 # authored by Olly Ferrie
 # created 07-05-2017
 #last edited 08-05-2017
