@@ -9,19 +9,25 @@ init python:
 
         # --- Giselle's Love Bar -------
         if show_happiness:
+            # set up a transparent frame to put things in
             ui.frame(
-                #xalign = 0.9, #centered
                 xalign = 0.96,
                 ypos = 0.04,
+                style = "title_frame",
             )
 
-            ui.vbox(xalign = 0.5)
+            ui.vbox(xalign = 0)
+
             ui.text ("HAPPINESS",
-                xalign = 0.0)
+                xalign = 0.05,
+                ypos = 2,
+                color = "#ededda",
+                size=20)
+
             ui.bar(max_happiness, happiness,
                 style="my_bar")
 
-            ui.close()
+            ui.close() #closes vbox
 
 
     config.overlay_functions.append(stats_overlay)
@@ -41,10 +47,13 @@ init -5 python:
 
     style.my_bar.left_bar = Frame("ui/bar_full.png", 0, 0)
     style.my_bar.right_bar = Frame("ui/bar_empty.png", 0, 0)
-    #style.my_bar.hover_left_bar = Frame("ui/bar_hover.png", 0, 0)
 
     style.my_bar.thumb = "ui/thumb.png"
     style.my_bar.thumb_shadow = None
     style.my_bar.thumb_offset = 16
 
     style.my_bar.font = "fonts/AvantGarde-Book.ttf"
+
+
+    style.title_frame = Style(style.default)
+    style.title_frame.background = Frame("ui/bar_title_bg.png")
