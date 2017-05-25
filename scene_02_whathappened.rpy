@@ -132,7 +132,7 @@ label agree_hallucination:
 
     prompto "Hah! Dude, you almost had me there."
 
-    "At first the sound of his laughter is a shock amid the silence of the snowdrifts. It's so light and so pure you find yourself quite drawn to it. He eventually stops and wipes his eyes, beaming your way."
+    "At first the sound of his laughter is a shock amid the silence of the snowdrifts. It's so light and so pure you find yourself quite drawn to it. He eventually stops and es his eyes, beaming your way."
 
     show prompto relievedsmile
     with dissolve

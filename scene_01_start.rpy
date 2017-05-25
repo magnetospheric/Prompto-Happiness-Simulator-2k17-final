@@ -21,7 +21,9 @@ label start:
 
     "The sun is high, reflecting on the crystalline ground, and at first you think you're all alone, but then you spot a figure moving amid the distant sunlit shimmers."
 
-    "Who could be out here? \n Are they also on a pilgrimage? \n You pick up speed, anxious to talk to another human being. The route from Tenebrae to Gralea is long and lonely for those not taking the train."
+    "Who could be out here? \nAre they also on a pilgrimage?"
+
+    "You pick up speed, anxious to talk to another human being. The route from Tenebrae to Gralea is long and lonely for those not taking the train."
 
     show prompto downcast at left
     with dissolve
@@ -68,7 +70,7 @@ label apology:
 
     prompto "You don't need to blame yourself. Seriously."
 
-    "So he says, but he clearly looks like he appreciates it. \n He looks a little more relaxed now, and you're pleased to see it, but you're now even more worried at what he could be doing out here all alone."
+    "So he says, but he clearly looks like he appreciates it. \nHe looks a little more relaxed now, and you're pleased to see it, but you're now even more worried at what he could be doing out here all alone."
 
     $ happiness += 2
 
