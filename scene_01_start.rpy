@@ -3,9 +3,9 @@
 label start:
 
     # set my starting variables:
-    $ happiness = 0
+    $ happiness = 2
 
-    $ show_happiness = True 
+    $ show_happiness = True
 
     $ prompto_name = "Stranger"
 
