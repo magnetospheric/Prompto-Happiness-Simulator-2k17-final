@@ -231,17 +231,6 @@ style choice_button:
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
 
-define gui.choice_button_width = 649
-define gui.choice_button_height = 49
-define gui.choice_button_tile = False
-define gui.choice_button_borders = Borders(100, 8, 100, 8)
-define gui.choice_button_text_font = gui.text_font
-define gui.choice_button_text_size = gui.text_size
-define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_outlines = [(1, "#4e4f6b", 0, 0)]
-define gui.choice_button_text_idle_color = "#1b1b25"
-define gui.choice_button_text_hover_color = "#ededda"
-
 ## Quick Menu screen ###########################################################
 ##
 ## The quick menu is displayed in-game to provide easy access to the out-of-game
