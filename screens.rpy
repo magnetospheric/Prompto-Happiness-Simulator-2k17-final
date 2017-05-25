@@ -218,17 +218,29 @@ style choice_button_text is button_text
 
 style choice_vbox:
     xalign 0.5
-    ypos 270
+    ypos 450
     yanchor 0.5
 
-    spacing gui.choice_spacing
+    spacing 1
 
-style choice_button is default:
+style choice_button:
     properties gui.button_properties("choice_button")
+    background "ui/choices_bg.png"
+    hover_background "ui/choices_bg_hover.png"
 
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
 
+define gui.choice_button_width = 649
+define gui.choice_button_height = 49
+define gui.choice_button_tile = False
+define gui.choice_button_borders = Borders(100, 8, 100, 8)
+define gui.choice_button_text_font = gui.text_font
+define gui.choice_button_text_size = gui.text_size
+define gui.choice_button_text_xalign = 0.5
+define gui.choice_button_text_outlines = [(1, "#4e4f6b", 0, 0)]
+define gui.choice_button_text_idle_color = "#1b1b25"
+define gui.choice_button_text_hover_color = "#ededda"
 
 ## Quick Menu screen ###########################################################
 ##

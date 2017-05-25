@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("Prompto Happiness Simulator 2k17 WIP")
+define config.name = _("Prompto Happiness Simulator 2k17")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -36,7 +36,7 @@ define gui.about = _("")
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "PromptoHappinessSimulator2k17WIP"
+define build.name = "PromptoHappinessSimulator2k17"
 
 
 ## Sounds and music ############################################################
@@ -136,7 +136,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-define config.save_directory = "PromptoHappinessSimulator2k17WIP-1495668039"
+define config.save_directory = "PromptoHappinessSimulator2k17-1495668039"
 
 
 ## Icon ########################################################################
