@@ -17,7 +17,6 @@ init python:
 ## GUI Configuration Variables
 ################################################################################
 
-
 ## Colors ######################################################################
 ##
 ## The colors of text in the interface.
@@ -134,7 +133,7 @@ define gui.dialogue_xpos = 70
 define gui.dialogue_ypos = 88
 
 ## The maximum width of dialogue text, in pixels.
-define gui.dialogue_width = 904
+define gui.dialogue_width = 880
 
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
