@@ -5,7 +5,7 @@ label start:
     # set my starting variables:
     $ happiness = 2
 
-    $ show_happiness = True
+    $ show_happiness = False
 
     $ prompto_name = "Stranger"
 
@@ -20,6 +20,8 @@ label start:
     "You've been walking for such a long time you can't feel your toes any more in your thick winter boots. There's just the monotonous crunch-crunch-crunch of your footsteps on packed-down snow."
 
     "The sun is high, reflecting on the crystalline ground, and at first you think you're all alone, but then you spot a figure moving amid the distant sunlit shimmers."
+
+    "Another person?"
 
     "Who could be out here? \nAre they also on a pilgrimage?"
 
@@ -66,13 +68,30 @@ label apology:
     show prompto sadsmile
     with dissolve
 
+    $ show_happiness = True
+
+    $ happiness += 2
+
+    show expression Text("Happiness increased!",
+    size=35,
+    yalign=0.5, # Centers the text -- Toward Bottom.
+    xalign=0.5, # Centers the text -- Toward Right.
+    drop_shadow=(1, 1),
+    color="#fff",
+    outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]
+    ) as text
+    with dissolve
+
+    pause 0.5
+
+    hide text
+    with dissolve
+
     "He smiles, but his expression is sad, like he recognises what you're doing."
 
     prompto "You don't need to blame yourself. Seriously."
 
     "So he says, but he clearly looks like he appreciates it. \nHe looks a little more relaxed now, and you're pleased to see it, but you're now even more worried at what he could be doing out here all alone."
-
-    $ happiness += 2
 
     "You decide to ask him."
 
@@ -96,9 +115,26 @@ label console:
     show prompto downcastsmile
     with dissolve
 
-    prompto "Thanks for asking."
+    $ show_happiness = True
 
     $ happiness += 1
+
+    show expression Text("Happiness increased",
+    size=35,
+    yalign=0.5, # Centers the text -- Toward Bottom.
+    xalign=0.5, # Centers the text -- Toward Right.
+    drop_shadow=(1, 1),
+    color="#fff",
+    outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]
+    ) as text
+    with dissolve
+
+    pause 0.5
+
+    hide text
+    with dissolve
+
+    prompto "Thanks for asking."
 
     "You decide to change the subject slightly. Focus on the world around you."
 
@@ -112,8 +148,25 @@ label pragmatic:
 
     prompto "I'm sorry. I don't really know you. So, uh..."
 
-    prompto "I mean, you get it, right? "
+    prompto "I mean, you get it, right?"
+
+    $ show_happiness = True
 
     $ happiness += 0
+
+    show expression Text("No increase in happiness",
+    size=35,
+    yalign=0.5, # Centers the text -- Toward Bottom.
+    xalign=0.5, # Centers the text -- Toward Right.
+    drop_shadow=(1, 1),
+    color="#fff",
+    outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]
+    ) as text
+    with dissolve
+
+    pause 0.5
+
+    hide text
+    with dissolve
 
     jump what_happened
