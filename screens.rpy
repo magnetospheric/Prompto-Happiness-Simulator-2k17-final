@@ -404,6 +404,45 @@ style menu_item_6:
 ## Used to display the main menu when Ren'Py starts.
 ##
 ## http://www.renpy.org/doc/html/screen_special.html#main-menu
+#### Animated Background Images ####
+transform clouds_transform_initial_norepeat:
+    xpos -800
+    yalign 0
+    linear 120 xpos 1736
+
+transform clouds_transform_1:
+    xpos -1236
+    yalign 0
+    pause 60
+    block:
+        xpos -1236
+        yalign 0
+        linear 100 xpos 1736
+        repeat
+transform clouds_transform_2:
+    xpos -1236
+    yalign 0
+    pause 20
+    block:
+        xpos -1236
+        yalign 0
+        linear 80 xpos 1736
+        repeat
+transform clouds_transform_3:
+    xpos -0.5
+    yalign 0
+    pause 2
+    block:
+        xpos -0.5
+        yalign 0
+        linear 33 xpos 1.0
+        repeat
+transform clouds_transform_4:
+    xpos 0.5
+    yalign 0
+    linear 18 xpos 1.0
+
+#image clouds = At("images/backgrounds/clouds.png", clouds_transform)
 
 screen main_menu():
 
@@ -413,6 +452,16 @@ screen main_menu():
     style_prefix "main_menu"
 
     add gui.main_menu_background
+
+    add "images/backgrounds/clouds.png" at clouds_transform_initial_norepeat
+
+    add "images/backgrounds/clouds.png" at clouds_transform_1
+
+    add "images/backgrounds/clouds.png" at clouds_transform_2
+
+    add "images/backgrounds/clouds3.png" at clouds_transform_3
+
+    add "images/backgrounds/clouds3.png" at clouds_transform_4
 
     ## This empty frame darkens the main menu.
     frame:
