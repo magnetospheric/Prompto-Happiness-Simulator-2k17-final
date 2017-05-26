@@ -8,6 +8,7 @@ label start:
     $ show_happiness = False
 
     $ prompto_name = "Stranger"
+    $ your_name = "You"
 
     # set the scene
     scene bg snowy_plains
@@ -17,22 +18,22 @@ label start:
 
     "Nothing but endless snow for miles."
 
-    "You've been walking for such a long time you can't feel your toes any more in your thick winter boots. There's just the monotonous crunch-crunch-crunch of your footsteps on packed-down snow."
+    "You've been walking for such a long time you can't feel your toes any more in your thick winter boots.{p=0.5}There's just the monotonous crunch-crunch-crunch of your footsteps on packed-down snow."
 
     "The sun is high, reflecting on the crystalline ground, and at first you think you're all alone, but then you spot a figure moving amid the distant sunlit shimmers."
 
     "Another person?"
 
-    "Who could be out here? \nAre they also on a pilgrimage?"
+    "Who could be out here?{p=0.5}Are they also on a pilgrimage?"
 
-    "You pick up speed, anxious to talk to another human being. The route from Tenebrae to Gralea is long and lonely for those not taking the train."
+    "You pick up speed, anxious to talk to another human being.{p=0.5}The route from Tenebrae to Gralea is long and lonely for those not taking the train."
 
     show prompto downcast at left
     with dissolve
 
-    "It looks like he's lost in thought. But from this distance, you can't really tell. You approach slowly."
+    "It looks like he's lost in thought.{p=0.5}But from this distance, you can't really tell.{p=0.5}You approach slowly."
 
-    "\"Hi.\""
+    you "Hi."
 
     show prompto surprised at left
     with dissolve
@@ -41,7 +42,7 @@ label start:
 
     prompto "A-are you okay?"
 
-    "Why is he asking how I am? He's clearly the one who's not okay."
+    "Why is he asking how I am?{p=0.5}He's clearly the one who's not okay."
 
     menu:
 
@@ -59,11 +60,11 @@ label start:
 
 label apology:
 
-    "\"Sorry for startling you like that.\""
+    you "Sorry for startling you like that."
 
     prompto "Oh, no, really. It's okay."
 
-    "\"No, I should have called out earlier or something.\""
+    you "No, I should have called out earlier or something."
 
     show prompto sadsmile
     with dissolve
@@ -91,26 +92,28 @@ label apology:
 
     prompto "You don't need to blame yourself. Seriously."
 
-    "So he says, but he clearly looks like he appreciates it. \nHe looks a little more relaxed now, and you're pleased to see it, but you're now even more worried at what he could be doing out here all alone."
+    "So he says, but he clearly looks like he appreciates it.{p=0.5}He looks a little more relaxed now, and you're pleased to see it, but you're now even more worried at what he could be doing out here all alone."
 
-    "You decide to ask him."
+    "You want to ask him, but you don't want to make him uncomfortable."
+
+    "Maybe a change of topic would be better?"
 
     jump what_happened
 
 label console:
 
-    "\"Hey, don't worry about me. Honestly, I'm more concerned about you. You look a bit ... upset.\""
+    you "Hey, don't worry about me. Honestly, I'm more concerned about you. You look a bit ... upset."
 
     prompto "M-me? Oh, uh ... "
 
     show prompto semidowncast
     with dissolve
 
-    "He averts his gaze again, gripping his arm hard like he's testing he's real. "
+    "He averts his gaze again, gripping his arm hard like he's testing he's real."
 
     prompto " ... I'm fine. I guess."
 
-    "You get the impression he doesn't like the spotlight being focussed so intently on him. \n But he at least seems a little bit happy that you cared."
+    "You get the impression he doesn't like the spotlight being focussed so intently on him.{p=0.5}But he at least seems a little bit happy that you cared."
 
     show prompto downcastsmile
     with dissolve
@@ -142,7 +145,7 @@ label console:
 
 label pragmatic:
 
-    "\"How did you get here?\""
+    you "How did you get here?"
 
     "He looks wary."
 
@@ -168,5 +171,11 @@ label pragmatic:
 
     hide text
     with dissolve
+
+    "You think you understand.{p=0.5}But it does make you wonder all the more what could have happened."
+
+    "Either way, it seems you've made him uncomfortable."
+
+    "Perhaps it's time to change the subject."
 
     jump what_happened
