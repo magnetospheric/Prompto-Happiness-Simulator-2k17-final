@@ -212,8 +212,8 @@ define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
 define gui.choice_button_text_outlines = [(1, "#4e4f6b", 0, 0)]
-define gui.choice_button_text_idle_color = "#1b1b25"
-define gui.choice_button_text_hover_color = "#ededda"
+define gui.choice_button_text_idle_color = "#ededda"
+define gui.choice_button_text_hover_color = "#1b1b25"
 
 
 ## File Slot Buttons ###########################################################
