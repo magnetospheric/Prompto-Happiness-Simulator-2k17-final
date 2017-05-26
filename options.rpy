@@ -113,7 +113,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## Controls the default text speed. The default, 0, is infinite, while any other
 ## number is the number of characters per second to type out.
 
-default preferences.text_cps = 0
+default preferences.text_cps = 30
 
 
 ## The default auto-forward delay. Larger numbers lead to longer waits, with 0
@@ -188,6 +188,20 @@ init python:
     build.documentation('*.html')
     build.documentation('*.txt')
 
+
+    def big_tag(tag, argument, contents):
+
+        size = int(argument) * 20
+
+        return [
+                (renpy.TEXT_TAG, u"size={}".format(size)),
+            ] + contents + [
+                (renpy.TEXT_TAG, u"/size"),
+            ]
+
+    config.custom_text_tags["big"] = big_tag
+
+
 ## A Google Play license key is required to download expansion files and perform
 ## in-app purchases. It can be found on the "Services & APIs" page of the Google
 ## Play developer console.
@@ -210,6 +224,7 @@ init python:
 #### Characters ####
 #define prompto = Character('Prompto', color="#fff2b5") # prompto has a light yellow colour
 define prompto = DynamicCharacter('prompto_name', color="#fff2b5")
+define you = DynamicCharacter('your_name', color="#b2b1c4")
 
 #### Character Images ####
 # submissive
