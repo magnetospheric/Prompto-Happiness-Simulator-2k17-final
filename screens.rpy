@@ -214,7 +214,8 @@ define config.narrator_menu = True
 
 style choice_vbox is vbox
 style choice_button is button
-style choice_button_text is button_text
+style choice_button_text is button_text:
+    ypos 2
 
 style choice_vbox:
     xalign 0.5
@@ -290,14 +291,32 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xalign 0.94
-        yalign 0.86
+        xalign 0.82
+        yalign 0.89
 
-        spacing gui.navigation_spacing
+        spacing 0
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("{k=-1.0}NEW GAME{/k}"):
+                style "menu_item_1"
+                text_style "menu_item_text"
+                action Start()
+
+            textbutton _("{k=-1.0}LOAD GAME{/k}"):
+                style "menu_item_2"
+                text_style "menu_item_text"
+                action ShowMenu("load")
+
+            textbutton _("{k=-1.0}OPTIONS{/k}"):
+                style "menu_item_3"
+                text_style "menu_item_text"
+                action ShowMenu("preferences")
+
+            textbutton _("{k=-1.0}ABOUT{/k}"):
+                style "menu_item_4"
+                text_style "menu_item_text"
+                action ShowMenu("about")
 
         else:
 
@@ -305,9 +324,11 @@ screen navigation():
 
             textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+            textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+            textbutton _("Options") action ShowMenu("preferences")
+
+            textbutton _("About") action ShowMenu("about")
 
         if _in_replay:
 
@@ -317,15 +338,29 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
-
         if renpy.variant("pc"):
 
-            ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            if main_menu:
 
-            ## The quit button is banned on iOS and unnecessary on Android.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+                ## Help isn't necessary or relevant to mobile devices.
+                textbutton _("{k=-1.0}HELP{/k}"):
+                    style "menu_item_5"
+                    text_style "menu_item_text"
+                    action ShowMenu("help")
+
+                ## The quit button is banned on iOS and unnecessary on Android.
+                textbutton _("{k=-1.0}QUIT{/k}"):
+                    style "menu_item_6"
+                    text_style "menu_item_text"
+                    action Quit(confirm=not main_menu)
+
+            else:
+
+                ## Help isn't necessary or relevant to mobile devices.
+                textbutton _("Help") action ShowMenu("help")
+
+                ## The quit button is banned on iOS and unnecessary on Android.
+                textbutton _("Quit") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -337,6 +372,31 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
+
+## Styles for indented main menu items ##
+style menu_item_text is text:
+    hover_color "#d1d7e3"
+    outlines [ (0, "#fff", 1, 1), (2, "#8f98a8", 0, 0) ]
+    color "#fff"
+    size 18
+
+style menu_item_1:
+    left_margin 0
+
+style menu_item_2:
+    left_margin 18
+
+style menu_item_3:
+    left_margin 36
+
+style menu_item_4:
+    left_margin 54
+
+style menu_item_5:
+    left_margin 72
+
+style menu_item_6:
+    left_margin 90
 
 
 ## Main Menu screen ############################################################
@@ -356,8 +416,8 @@ screen main_menu():
 
     ## This empty frame darkens the main menu.
     frame:
-        xalign 0.0
-        ypos 568
+        xalign -300
+        ypos 508
         background "ui/main_menu_bg.png"
 
     ## The use statement includes another screen inside this one. The actual

@@ -64,7 +64,7 @@ define gui.name_text_font = "fonts/AvantGarde-Book.ttf"
 define gui.interface_text_font = "fonts/Avenir-Light.ttf"
 
 ## The size of normal dialogue text.
-define gui.text_size = 21
+define gui.text_size = 20
 
 ## The size of character names.
 define gui.name_text_size = 23
@@ -148,7 +148,7 @@ define gui.dialogue_text_xalign = 0.0
 
 ## The width and height of a button, in pixels. If None, Ren'Py computes a size.
 define gui.button_width = None
-define gui.button_height = 36
+define gui.button_height = 30
 
 ## The borders on each side of the button, in left, top, right, bottom order.
 define gui.button_borders = Borders(4, 4, 4, 4)
@@ -161,7 +161,7 @@ define gui.button_tile = False
 define gui.button_text_font = gui.interface_text_font
 
 ## The size of the text used by the button.
-define gui.button_text_size = gui.interface_text_size
+define gui.button_text_size = 18
 
 ## The color of button text in various states.
 define gui.button_text_idle_color = gui.idle_color
@@ -258,10 +258,10 @@ define gui.notify_ypos = 45
 define gui.choice_spacing = 22
 
 ## Buttons in the navigation section of the main and game menus.
-define gui.navigation_spacing = 4
+define gui.navigation_spacing = 1
 
 ## Controls the amount of spacing between preferences.
-define gui.pref_spacing = 10
+define gui.pref_spacing = 1
 
 ## Controls the amount of spacing between preference buttons.
 define gui.pref_button_spacing = 0
@@ -436,7 +436,7 @@ init python:
         ## Change the size and spacing of items in the game menu.
         gui.choice_button_width = 1240
 
-        gui.navigation_spacing = 20
+        gui.navigation_spacing = 4
         gui.pref_button_spacing = 10
 
         gui.history_height = 190
