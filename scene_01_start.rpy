@@ -31,6 +31,8 @@ label start:
     show prompto downcast at left
     with dissolve
 
+    "The figure is that of a young man. Striking blond hair pokes out from under a warm woollen cap to glint in the sunlight. He's swamped in a bulky winter coat that makes his legs look stick-thin beneath it."
+
     "It looks like he's lost in thought.{p=0.5}But from this distance, you can't really tell.{p=0.5}You approach slowly."
 
     you "Hi."

@@ -2,7 +2,7 @@ label what_happened:
 
     you "It's awfully cold out here..."
 
-    "Talking about the weather{p=0.5}...{p=0.5}smooth going."
+    "Talking about the weather{p=0.5}. . . {p=0.5}smooth going."
 
     "Then you remember something."
     "The group of soldiers you saw earlier ... they'd been headed in the same direction as him."

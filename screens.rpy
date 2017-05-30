@@ -318,6 +318,20 @@ screen navigation():
                 text_style "menu_item_text"
                 action ShowMenu("about")
 
+            if renpy.variant("pc"):
+
+                ## Help isn't necessary or relevant to mobile devices.
+                textbutton _("{k=-1.0}HELP{/k}"):
+                    style "menu_item_5"
+                    text_style "menu_item_text"
+                    action ShowMenu("help")
+
+                ## The quit button is banned on iOS and unnecessary on Android.
+                textbutton _("{k=-1.0}QUIT{/k}"):
+                    style "menu_item_6"
+                    text_style "menu_item_text"
+                    action Quit(confirm=not main_menu)
+
         else:
 
             textbutton _("History") action ShowMenu("history")
@@ -338,29 +352,13 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        if renpy.variant("pc"):
+            if renpy.variant("pc"):
 
-            if main_menu:
+                    ## Help isn't necessary or relevant to mobile devices.
+                    textbutton _("Help") action ShowMenu("help")
 
-                ## Help isn't necessary or relevant to mobile devices.
-                textbutton _("{k=-1.0}HELP{/k}"):
-                    style "menu_item_5"
-                    text_style "menu_item_text"
-                    action ShowMenu("help")
-
-                ## The quit button is banned on iOS and unnecessary on Android.
-                textbutton _("{k=-1.0}QUIT{/k}"):
-                    style "menu_item_6"
-                    text_style "menu_item_text"
-                    action Quit(confirm=not main_menu)
-
-            else:
-
-                ## Help isn't necessary or relevant to mobile devices.
-                textbutton _("Help") action ShowMenu("help")
-
-                ## The quit button is banned on iOS and unnecessary on Android.
-                textbutton _("Quit") action Quit(confirm=not main_menu)
+                    ## The quit button is banned on iOS and unnecessary on Android.
+                    textbutton _("Quit") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
