@@ -235,7 +235,7 @@ image prompto semidowncast  = "images/characters/prompto_semidowncast.png"
 
 # shock
 image prompto surprised  = "images/characters/prompto_surprised.png"
-#image prompto frightened  = "images/characters/prompto_frightened.png"
+image prompto frightened  = "images/characters/prompto_frightened.png"
 
 # actions
 #image prompto scrutinisinggun  = "images/characters/prompto_scrutisninggun.png"
