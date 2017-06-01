@@ -76,7 +76,7 @@ label what_happened:
 
     "You nod."
 
-    show prompto pensiveraisedeyes
+    show prompto raisedeyes
     with dissolve
 
     "He raises his eyes to the sky. The sun is pale and the way it glints off his hair reminds you of catkins in spring. He looks positively angelic, but whatever he's thinking about is clearly not so."
@@ -89,11 +89,14 @@ label what_happened:
 
     "He sighs."
 
+    show prompto raisedeyes_closed
+    with dissolve
+
     prompto "I've been out here for days with nobody to talk to."
 
     prompto "I mean, you're real, aren't you? You're not just another hallucination?"
 
-    show prompto sadlaugh
+    show prompto downcastsmile
     with dissolve
 
     "He pauses, chuckles to himself."

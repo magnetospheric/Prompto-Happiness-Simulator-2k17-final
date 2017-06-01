@@ -233,7 +233,8 @@ image prompto semidowncast  = "images/characters/prompto_semidowncast.png"
 image prompto regrets  = "images/characters/prompto_regrets.png"
 image prompto frightened_tightlipped  = "images/characters/prompto_frightened_tightlipped.png"
 image prompto frightened_sidecast  = "images/characters/prompto_frightened_sidecast.png"
-#image prompto pensiveraisedeyes = "images/characters/prompto_pensiveraisedeyes"
+image prompto raisedeyes = "images/characters/prompto_raisedeyes.png"
+image prompto raisedeyes_closed = "images/characters/prompto_raisedeyes_closed.png"
 
 # shock
 image prompto surprised  = "images/characters/prompto_surprised.png"
