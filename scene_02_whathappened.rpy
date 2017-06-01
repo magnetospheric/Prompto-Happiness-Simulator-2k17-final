@@ -14,25 +14,38 @@ label what_happened:
 
     "He starts trembling.{p=0.5}This is when you notice the gun. It's stuffed carelessly into his pocket, like he's trying to ignore its presence."
 
+    show prompto frightened_tightlipped
+    with dissolve
+
     "You can't not ask, at this point."
 
     you "What exactly happened here?"
 
     "You keep your voice level, but you make a point of looking at the gun."
 
-    prompto "Oh, uh ... "
-
-    show prompto scrutinisinggun
+    show prompto frightened
     with dissolve
 
-    prompto "{i}I don't know why he let me have this back.{/i}"
+    prompto "Oh, uh ... "
+
+    show prompto frightened_sidecast
+    with dissolve
+
+    "He falters, plays with the gun idly, although he makes no attempt to cock it."
 
     show prompto regrets
     with dissolve
 
+    prompto "{i}I don't know why he let me have this back.{/i}"
+
     "Who is 'he', you wonder.{p=0.5}Suddenly you're not worried about whether the gun really belongs to this young man.{p=0.5}You're more worried about whoever gave it to him."
 
-    "Suddenly you're overcome with the urge to protect him."
+    "You're overcome with the urge to protect him."
+
+    show prompto surprised
+    with dissolve
+
+    "The moment over, he tucks the weapon back into his pocket, and raises his eyes to yours once more."
 
     prompto "I'm not planning on using it. Unless those soldiers come back."
 
@@ -49,6 +62,9 @@ label what_happened:
     prompto "Sure. I mean, it'd be nice to have company."
 
     "He pauses."
+
+    show prompto sadsmile
+    with dissolve
 
     prompto "I'm Prompto, by the way. Nice to meet you."
 

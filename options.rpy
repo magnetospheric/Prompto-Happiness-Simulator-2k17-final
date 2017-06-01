@@ -230,7 +230,9 @@ define you = DynamicCharacter('your_name', color="#b2b1c4")
 # submissive
 image prompto downcast  = "images/characters/prompto_downcast.png"
 image prompto semidowncast  = "images/characters/prompto_semidowncast.png"
-#image prompto regrets  = "images/characters/prompto_regrets.png"
+image prompto regrets  = "images/characters/prompto_regrets.png"
+image prompto frightened_tightlipped  = "images/characters/prompto_frightened_tightlipped.png"
+image prompto frightened_sidecast  = "images/characters/prompto_frightened_sidecast.png"
 #image prompto pensiveraisedeyes = "images/characters/prompto_pensiveraisedeyes"
 
 # shock
