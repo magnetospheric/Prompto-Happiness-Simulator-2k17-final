@@ -248,7 +248,8 @@ image prompto sadsmile  = "images/characters/prompto_sadsmile.png"
 image prompto neutralsmile  = "images/characters/prompto_neutralsmile.png"
 image prompto downcastsmile  = "images/characters/prompto_downcastsmile.png"
 #image prompto sadlaugh = "images/characters/prompto_sadlaugh.png"
-#image prompto laugh = "images/characters/prompto_laugh.png"
+image prompto lightlaugh = "images/characters/prompto_lightlaugh.png"
+image prompto widelaugh = "images/characters/prompto_widelaugh.png"
 #image prompto relievedsmile = "images/characters/prompto_relievedsmile.png"
 
 #### Background Images ####

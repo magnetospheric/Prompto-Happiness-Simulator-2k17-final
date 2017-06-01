@@ -155,9 +155,12 @@ label keep_silent:
 
 label agree_hallucination:
 
+    show prompto surprised
+    with dissolve
+
     "Prompto stares at you for a second."
 
-    show prompto laugh
+    show prompto widelaugh
     with dissolve
 
     prompto "Hah! Dude, you almost had me there."
@@ -166,12 +169,27 @@ label agree_hallucination:
 
     "He eventually stops and raises his eyes, beaming your way."
 
-    show prompto relievedsmile
+    show prompto lightlaugh
     with dissolve
 
     prompto "No hallucination would {i}ever{/i} say that!"
 
     $ happiness += 2
+
+    show expression Text("Happiness increased",
+    size=35,
+    yalign=0.5, # Centers the text -- Toward Bottom.
+    xalign=0.5, # Centers the text -- Toward Right.
+    drop_shadow=(1, 1),
+    color="#fff",
+    outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]
+    ) as text
+    with dissolve
+
+    pause 0.5
+
+    hide text
+    with dissolve
 
     "You smile back, glad your dumb gambit paid off. It feels like the two of you have a lot in common."
 
@@ -182,6 +200,9 @@ label agree_hallucination:
     you "But seriously, I've been travelling alone for days, too. I get it. At least, a little."
 
     prompto "Man, I can't even begin to describe how much that makes me feel better."
+
+    show prompto surprised #make one based on 'surprised' but have it tightlipped
+    with dissolve
 
     "He looks at you, studies you, a question dancing on his lips.{p=0.5}Finally, he asks."
 
