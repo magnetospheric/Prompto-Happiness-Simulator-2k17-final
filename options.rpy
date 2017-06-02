@@ -254,4 +254,6 @@ image prompto widelaugh = "images/characters/prompto_widelaugh.png"
 #image prompto relievedsmile = "images/characters/prompto_relievedsmile.png"
 
 #### Background Images ####
-image bg snowy_plains = 'images/backgrounds/snowy_plains.jpg'
+image bg snowy_plains = 'images/backgrounds/snowy_plains.png'
+image bg distant_mountain = 'images/backgrounds/distant_mountain.png'
+image bg plains_with_mountain = 'images/backgrounds/plains_with_mountain.png'

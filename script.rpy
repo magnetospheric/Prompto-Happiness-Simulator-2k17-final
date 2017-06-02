@@ -9,7 +9,8 @@
 # -- scene_01_start.rpy
 # -- scene_02_whathappened.rpy
 # -- scene_03_niflheim.rpy
-# -- scene_04_human.rpy
+# -- scene_04_tomountainhaven.rpy
+# -- scene_05_human.rpy
 # -- scene_05_campfire.rpy
 
 

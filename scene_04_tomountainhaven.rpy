@@ -1,38 +1,63 @@
 label to_mountain_haven:
 
-    you "So, are you headed to Niflheim or something?"
+    you "So, are you headed towards Niflheim, or you getting away?"
 
-    "You can't imagine why anyone would be out here if they weren't."
+    "You can't imagine why anyone would be out here if they weren't either coming or going from the damn place."
 
-    prompto "Yeah. I guess."
+    show prompto semidowncast
+    with dissolve
+
+    prompto "Towards. I guess."
 
     "He doesn't seem keen to reveal any more at this stage."
 
     #if he has a low happiness rating:
     if happiness >= 4:
+        show prompto downcastsmile
+        with dissolve
         "But he does seem to have perked up a bit. Perhaps you've made a good impression?"
     elif happiness >= 3:
         "He still seems awfully sad."
     elif happiness <= 2:
         "It seems he doesn't really trust you."
 
-    you "Come on. We should get going before nightfall. The daemons are pretty rough in these parts.{p=0.5}There's a haven way over in those mountains."
+    you "Come on. We should get going before nightfall. The daemons are pretty rough in these parts."
+
+    #cut to view of mountains for a bit
+    scene bg distant_mountain
+    with dissolve
+
+    pause 0.5
+
+    you "There's a haven way over in those mountains."
+
+    scene bg snowy_plains
+
+    show prompto surprised
+    with dissolve
 
     prompto "It's safe?"
 
-    you "Yeah, the military don't use it. It's just for pilgrims, really."
+    you "Yeah, the military don't use it; they prefer their dropships. It's just for pilgrims, really."
+
+    show prompto dubious
+    with dissolve
 
     "He considers."
 
     prompto "Okay. Let's go."
 
-    #cut to view of mountains for a bit
-
+    scene bg plains_with_mountain
+    with dissolve
+    
     if happiness <= 2:
 
         jump nofood
 
     if happiness >= 3:
+
+        show prompto downcastsmile
+        with dissolve
 
         "You both start the long trek towards the mountains. The snowy plains don't seem nearly as isolating now that you're walking with him."
 
@@ -84,6 +109,9 @@ label trailbar:
 
 label tangerine:
 
+    show prompto dubious
+    with dissolve
+
     "He eyes the fruit suspiciously."
 
     prompto "I... don't really like tangerines."
@@ -104,13 +132,29 @@ label tangerine:
 
 label candy:
 
+    show prompto frightened_tightlipped
+    with dissolve
+
     "He looks at the candy wistfully. You spot some deep internal struggle going on."
 
+    show prompto frightened_sidecast
+    with dissolve
+
     prompto "I really shouldn't.{p=0.5}Sorry."
+
+    "You feel a little guilty, although his avoidance is not something you could have predicted.{p=0.5}Your eyes search his for answers, but he shies away."
+
+    "You leave the subject alone, and, somewhat reluctantly, stuff the candy back into your bag."
+
+    show prompto frightened_tightlipped
+    with dissolve
 
     jump human
 
 label nofood:
+
+    show prompto dubious
+    with dissolve
 
     "You both start the long trek towards the mountains. The snowy plains don't seem nearly as isolating now that you're walking with him. Surely he feels the same, because although he's guarded, hand hovering near his gun, he still asked you to join him."
 

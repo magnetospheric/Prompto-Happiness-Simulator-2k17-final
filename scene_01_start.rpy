@@ -1,6 +1,25 @@
 #### Game Start ####
 
+#testing
 label start:
+
+    # TESTING NIFLHEIM #
+    # set my starting variables:
+    $ happiness = 3
+
+    $ show_happiness = True
+
+    $ prompto_name = "Prompto"
+    $ your_name = "You"
+
+    scene bg snowy_plains
+
+    show prompto dubious
+    with dissolve
+
+    jump niflheim
+
+label start01:
 
     # set my starting variables:
     $ happiness = 2

@@ -61,7 +61,7 @@ label what_happened:
 
     "You look from his eyes to the gun and back again."
 
-    you "Can I tag along with you?"
+    you "Can I tag along with you? At least for the time being."
 
     prompto "Sure. I mean, it'd be nice to have company."
 

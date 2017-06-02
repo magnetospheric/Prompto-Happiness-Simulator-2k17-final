@@ -56,7 +56,7 @@ label hate_niflheim:
 
     "It's a loaded question. It's clear he doesn't like the place, but he seems scared of saying so outright."
 
-    you "I don't really like living there, to be honest with you.{p=0.5}It's overcrowded, and us ordinary citizens are treated, well, little better than machines."
+    you "I don't really like living there, to be honest with you. Especially the capital city, Gralea.{p=0.5}It's overcrowded, and us ordinary citizens are treated, well, little better than machines."
 
     show prompto sadsmile
     with dissolve
@@ -64,6 +64,10 @@ label hate_niflheim:
     "He smiles sadly."
 
     prompto "I know the feeling."
+
+    prompto "I don't like Niflheim either."
+
+    you "I'm glad thats something we have in common."
 
     $ happiness += 2
 
