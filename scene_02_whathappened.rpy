@@ -5,7 +5,11 @@ label what_happened:
     "Talking about the weather{p=0.5}. . . {p=0.5}smooth going."
 
     "Then you remember something."
+
     "The group of soldiers you saw earlier ... they'd been headed in the same direction as him."
+
+    show prompto surprised
+    with dissolve
 
     you "Did you see the Magitek Troopers come this way?"
 
@@ -103,7 +107,7 @@ label what_happened:
 
     prompto "'Course, a hallucination's bound to say they're not anyway. Stupid question. Sorry."
 
-    "You wonder briefly if he is crazy. Again, he seems cogent enough, and he's awfully sweet. But kindness is a rare thing in this world, and it's hard not to see it as a little suspect."
+    "You wonder briefly if he is crazy.{p=0.5}Again, he seems cogent enough, and he's awfully sweet. But kindness is a rare thing in this world, and it's hard not to see it as a little suspect."
 
     "You were brought up following the word of the Oracle, though, and you believe in compassion above all else. Anyone who has cause to doubt what they see with their own two eyes, no matter the reason, must be in need of reassurance."
 
@@ -125,29 +129,71 @@ label what_happened:
 
 label deny_hallucination:
 
-    "It's exactly what he said a hallucination would say, but you say it anyway. Luckily, you speak sincerely enough that he noticeably calms down."
+    show prompto semidowncast
+    with dissolve
 
-    show prompto relievedsmile
+    "It's exactly what he said a hallucination would say, but you say it anyway."
+
+    "Luckily, you manage to speak sincerely enough that, after a moment, he noticeably calms down."
+
+    show prompto downcastsmile
     with dissolve
 
     prompto "Hah, well, even if you are, at least you're nice."
 
     $ happiness += 1
 
+    show expression Text("Happiness increased",
+    size=35,
+    yalign=0.5, # Centers the text -- Toward Bottom.
+    xalign=0.5, # Centers the text -- Toward Right.
+    drop_shadow=(1, 1),
+    color="#fff",
+    outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]
+    ) as text
+    with dissolve
+
+    pause 0.5
+
+    hide text
+    with dissolve
+
     "You haven't managed to completely convince him, but you suppose there's only so much you can do. You decide to let him lead the conversation from here."
 
-    "Prompto studies you with curiosity, trying to figure out how you fit in with this environment. He seems as confused by you as you were by him."
+    show prompto dubious
+    with dissolve
+
+    "Prompto studies you with curiosity, trying to figure out how you fit in with this environment. He seems as confused by you as you are by him."
 
     jump niflheim
 
 label keep_silent:
 
-    show prompto neutralsmile
+    "Your silence doesn't go down well."
+
+    show prompto dubious
     with dissolve
+
+    "He watches you anxiously."
 
     prompto "Sorry. I just made things awkward, didn't I? Ah, forget it."
 
     $ happiness += 0
+
+    show expression Text("No increase in happiness",
+    size=35,
+    yalign=0.5, # Centers the text -- Toward Bottom.
+    xalign=0.5, # Centers the text -- Toward Right.
+    drop_shadow=(1, 1),
+    color="#fff",
+    outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]
+    ) as text
+    with dissolve
+
+    pause 0.5
+
+    hide text
+    with dissolve
 
     "You try to apologise, or think of something to say that will fix the situation. But he's already moved on."
 
@@ -176,7 +222,7 @@ label agree_hallucination:
 
     $ happiness += 2
 
-    show expression Text("Happiness increased",
+    show expression Text("Happiness increased!",
     size=35,
     yalign=0.5, # Centers the text -- Toward Bottom.
     xalign=0.5, # Centers the text -- Toward Right.
@@ -199,9 +245,9 @@ label agree_hallucination:
 
     you "But seriously, I've been travelling alone for days, too. I get it. At least, a little."
 
-    prompto "Man, I can't even begin to describe how much that makes me feel better."
+    prompto "Man, I can't even begin to describe just how much better that makes me feel."
 
-    show prompto surprised #make one based on 'surprised' but have it tightlipped
+    show prompto dubious
     with dissolve
 
     "He looks at you, studies you, a question dancing on his lips.{p=0.5}Finally, he asks."

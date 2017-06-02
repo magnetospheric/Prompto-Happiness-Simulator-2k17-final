@@ -1,8 +1,11 @@
 label niflheim:
 
-    prompto "So, your turn. What are you doing here, then?"
+    prompto "So, your turn. What are you doing here?"
 
-    "\"I'm on the pilgrim's trail. I've just been to Tenebrae - now I'm headed back home to Niflheim.\""
+    you "I'm on the pilgrim's trail. I've just been to Tenebrae - now I'm headed back home to Niflheim."
+
+    show prompto semidowncast
+    with dissolve
 
     prompto "Niflheim, huh?"
 
@@ -21,34 +24,62 @@ label niflheim:
 
 label like_niflheim:
 
+
+    $ happiness += 0
+
+    show expression Text("No increase in happiness",
+    size=35,
+    yalign=0.5, # Centers the text -- Toward Bottom.
+    xalign=0.5, # Centers the text -- Toward Right.
+    drop_shadow=(1, 1),
+    color="#fff",
+    outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]
+    ) as text
+    with dissolve
+
+    pause 0.5
+
+    hide text
+    with dissolve
+
     jump to_mountain_haven
 
 
 label hate_niflheim:
 
+    you "Yeah... I'm not looking forward to returning."
+
+    show prompto surprised
+    with dissolve
+
+    prompto "How come?"
+
+    "It's a loaded question. It's clear he doesn't like the place, but he seems scared of saying so outright."
+
+    you "I don't really like living there, to be honest with you.{p=0.5}It's overcrowded, and us ordinary citizens are treated, well, little better than machines."
+
+    show prompto sadsmile
+    with dissolve
+
+    "He smiles sadly."
+
+    prompto "I know the feeling."
+
+    $ happiness += 2
+
+    show expression Text("Happiness increased!",
+    size=35,
+    yalign=0.5, # Centers the text -- Toward Bottom.
+    xalign=0.5, # Centers the text -- Toward Right.
+    drop_shadow=(1, 1),
+    color="#fff",
+    outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]
+    ) as text
+    with dissolve
+
+    pause 0.5
+
+    hide text
+    with dissolve
+
     jump to_mountain_haven
-
-
-label to_mountain_haven:
-
-    "\"So, are you headed to Niflheim or something?\""
-
-    prompto "Yeah. I guess."
-
-    "He doesn't seem keen to reveal any more at this stage."
-
-    #if he has a low happiness rating:
-     #"He still seems awfully sad"
-    #if he has the lowest happiness rating
-     #"He still seems awfully sad, and it seems he doesn't really trust you"
-    # if he has a high happiness rating
-     #"But he does seem to have perked up a bit."
-    "\"Come on. We should get going before nightfall. There's a haven way over in those mountains."
-
-    #cut to view of mountains for a bit
-
-    # if he has low / high happiness, say slightly different things here
-    "You both start the long trek towards the mountains. The snowy plains don't seem nearly as isolating now that you're walking with him. And he seems happy to have company - or so the contented smile plastered across his face would indicate."
-    "You both start the long trek towards the mountains. The snowy plains don't seem nearly as isolating now that you're walking with him. Surely he feels the same, because although he's guarded, hand hovering near his gun, he still asked you to join him."
-
-    jump human

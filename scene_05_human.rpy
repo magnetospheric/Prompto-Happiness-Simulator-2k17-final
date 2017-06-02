@@ -1,50 +1,67 @@
 label human:
 
-    #you walk in silence if his happiness is low
-    #he chats to you about random shit if his happiness is high.
+    "The wind blusters about, picking up loose snowflakes and casting them into the air like dice."
 
-    "You walk on together in silence"
+    "It's getting colder, and the closer you get to the mountains, the more your cheeks grow numb. Your eyelashes are freezing over. Your face feels ruddy and blistery."
 
-    "After a while, Prompto speaks."
+    "Prompto, on the other hand, looks just as angelic as ever. Not even a red flush from the exertion."
 
-    prompto "Hey."
+    if happiness <= 3:
 
-    "You raise your eyebrows, wait for him to continue. "
+        "You walk on together in silence."
 
-    prompto "Do I look human to you?"
+        jump final_doubts
 
-    prompto "Because {i}he's{/i} making me doubt it."
+    else:
 
-    "He looks off to the side. There's something haunted in the way he does it, like he's expecting shadows round every corner."
+        "After a while, Prompto speaks."
 
-    prompto "He makes me doubt everything."
+        prompto "Hey."
 
-    "Who is this 'he', you want to ask. But Prompto isn't focussing; he casts his eyes hopelessly towards the sky."
+        "You raise your eyebrows, wait for him to continue."
 
-    prompto "I just wanted to go on a road trip with my best bud. See him get married, try some gelato in Altissia. Maybe ride a chocobo or two."
+        prompto "Do I look human to you?"
 
-    menu:
+        prompto "Because {i}he's{/i} making me doubt it."
 
-        "Pester him about the strange man he mentioned.":
+        "He looks off to the side. There's something haunted in the way he does it, like he's expecting shadows round every corner."
 
-            jump ardyn
+        prompto "He makes me doubt everything."
 
-        "Ask him what his best friend is like.":
+        "Who is this 'he', you want to ask.{p=0.5}But Prompto isn't focussing; he casts his eyes hopelessly towards the sky."
 
-            jump noctis
+        show prompto raisedeyes
+        with dissolve
 
-        "Mention you really like chocobos.":
+        prompto "I just wanted to go on a road trip with my best bud. See him get married, try some gelato in Altissia. Maybe ride a chocobo or two."
 
-            jump chocobos
+        menu:
+
+            "Pester him about the strange man he mentioned.":
+
+                jump ardyn
+
+            "Ask him what his best friend is like.":
+
+                jump noctis
+
+            "Mention you really like chocobos.":
+
+                jump chocobos
 
 label chocobos:
 
-    "\"Oh! Chocobos? I\""
+    you "Oh! Chocobos? I {i}love{/i} chocobos."
 
     "His face lights up."
 
     prompto "They're the best, huh?"
 
+    "Then he hums a familiar tune. You recognise it as the chocobo song, a nursery rhyme of sorts. It's pretty universal, and you find yourself joining in."
+
+    "He laughs."
+
+    "Your mind keeps drifting back to that odd question, though. {i}\'Do I look human?\'{/i}{p=0.5}What kind of thing makes a person ask something like that?"
 
     menu:
 
@@ -60,9 +77,9 @@ label camera:
 
     "You think now is probably a good time to change the subject."
 
-    "\"Hey, is that a camera?\""
+    you "Hey, is that a camera?"
 
-    "\"Maybe you should\""
+    you "Maybe you should "
 
     prompto "Oh, you mean, like a selfie?"
 

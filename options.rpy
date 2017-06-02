@@ -238,6 +238,7 @@ image prompto raisedeyes_closed = "images/characters/prompto_raisedeyes_closed.p
 
 # shock
 image prompto surprised  = "images/characters/prompto_surprised.png"
+image prompto dubious  = "images/characters/prompto_dubious.png"
 image prompto frightened  = "images/characters/prompto_frightened.png"
 
 # actions
