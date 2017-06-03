@@ -1,20 +1,36 @@
 label human:
 
+    if happiness >= 5:
+        show prompto downcastsmile
+        with dissolve
+    else:
+        show prompto dubious
+        with dissolve
+
     "The wind blusters about, picking up loose snowflakes and casting them into the air like dice."
 
     "It's getting colder, and the closer you get to the mountains, the more your cheeks grow numb. Your eyelashes are freezing over. Your face feels ruddy and blistery."
 
     "Prompto, on the other hand, looks just as angelic as ever. Not even a red flush from the exertion."
 
+    show prompto dubious_sidecast
+    with dissolve
+
+    "A cry issues out on the breeze. You've heard such a thing before, once when you saw a Magitek unit failing."
+
+    "It had been doing its evening patrol in Gralea, and something had gone wrong in its circuitry, presumably.{p=0.5}But you'll never forget how it sounded pained, shrieking like a dying animal."
+
+    "Prompto seems shaken by the noise."
+
     if happiness <= 3:
 
-        "You walk on together in silence."
+        "But he says nothing. You walk on together in silence."
 
-        jump final_doubts
+        jump real_life_rpg
 
     else:
 
-        "After a while, Prompto speaks."
+        "After a while, he speaks."
 
         show prompto frightened
         with dissolve
@@ -28,6 +44,7 @@ label human:
         prompto "Because {i}he's{/i} making me doubt it."
 
         show prompto frightened_sidecast
+        with dissolve
 
         "He looks off to the side. There's something haunted in the way he does it, like he's expecting shadows round every corner."
 
@@ -58,83 +75,172 @@ label chocobos:
 
     you "Oh! Chocobos? I {i}love{/i} chocobos."
 
+    show prompto lightlaugh
+    with dissolve
+
     "His face lights up."
+
+    $ happiness += 2
+
+    show expression Text("Happiness increased!",
+    size=35,
+    yalign=0.5,
+    xalign=0.5,
+    drop_shadow=(1, 1),
+    color="#fff",
+    outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]
+    ) as text
+    with dissolve
+
+    pause 0.5
+
+    hide text
+    with dissolve
 
     prompto "They're the best, huh?"
 
     "Then he hums a familiar tune. You recognise it as the chocobo song, a nursery rhyme of sorts. It's pretty universal, and you find yourself joining in."
 
+    show prompto widelaugh
+    with dissolve
+
     "He laughs."
 
-    "Your mind keeps drifting back to that odd question, though. {i}\'Do I look human?\'{/i}{p=0.5}What kind of thing makes a person ask something like that?"
+    you "You ever ride one?"
 
-    jump final_doubts
+    show prompto lightlaugh
+    with dissolve
 
+    prompto "Ha! Yeah - just a few times. I went to Wiz's Chocobo Ranch in Duscae before... {p=0.5}Well. It was an awesome place."
 
+    you "That with your friend you mentioned?"
 
-label final_doubts:
+    show prompto dubious
+    with dissolve
 
-    prompto "You know, all those times when I said this was like a real-life RPG, I didn't actually expect it to have a, y'know, major character death. Or a deep backstory arc. Where you find out the character's tragic past or whatever. It's not fun when it happens to you."
-
-    "He smiles, and blinks the tears away from his eyes."
-
-    prompto "Yeah, I enjoy this stuff so much better in video games. Right now, it's just ... depressing."
-
-    prompto "I probably sound like a stuck record by now, but ... I didn't want any of this to happen."
-
-    "He looks pretty upset..."
+    "He nods, and his expression turns sad again."
 
     menu:
 
-        "Hug him":
+        "Ask him what his best friend is like":
 
-            jump hug
+            jump noctis
 
-        "Tell him everything will be okay":
+        "Talk more about chocobos instead":
 
-            jump comfort
+            jump dont_ask
 
-        "Crack a joke":
+    "Your mind keeps drifting back to that odd question, though. {i}\'Do I look human?\'{/i}{p=0.5}What kind of thing makes a person ask something like that?"
 
-            jump no_hug
-
-        "Stand there awkwardly":
-
-            jump no_hug
-
-label hug:
-
-    "You stop moving forward."
-
-    you "Hey."
-
-    "You don't speak harshly at all, but the urgency in your voice makes him stop too."
-
-    you "You don't sound like a stuck record."
-
-    "And you hug him tight. Your hands are in a non-threatening position across his back and shoulders, and you simply focus on pouring out compassion, ready to stop should he give any indication he's uncomfortable. You barely know this man, but you can't stand to see him beat himself up."
-
-    "He leans into the hug."
-
-    "You think you detect a slight sniffle as he buries his face in the crook of your shoulder. He seems to really appreciate the physical contact."
-
-    $ happiness += 2
-
-    "When he breaks contact, his eyes are a little misty, but he's happy."
-
-    prompto "Whew! Uh, that wasn't what I expected, but it... it was nice. Thanks."
+    jump real_life_rpg
 
 
-label comfort:
+label noctis:
 
-    "It's clear you're doing your best. And that's all a friend could ask for."
+    you "This friend you keep talking about. What's he like?"
 
-    $ happiness += 1
+    "You're hoping that perhaps giving him the chance to open up will help him feel better, but he doesn't seem keen on answering."
 
-label joke:
+    "He plays with the ends of his coat sleeve. It's clear he's thinking hard."
+
+    show prompto dubious_sidecast
+    with dissolve
+
+    prompto "I don't think I'm ready to talk about him just yet."
+
+    you "Hey, no worries. I'm sorry I asked."
+
+    show prompto dubious
+    with dissolve
+
+    prompto "No, it's okay."
 
     $ happiness += 0
 
-label no_hug:
+    show expression Text("No increase in happiness",
+    size=35,
+    yalign=0.5,
+    xalign=0.5,
+    drop_shadow=(1, 1),
+    color="#fff",
+    outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]
+    ) as text
+    with dissolve
 
-    $ happiness -= 2
+    pause 0.5
+
+    hide text
+    with dissolve
+
+    jump real_life_rpg
+
+label ardyn:
+
+    you "Who's this \'he\'? This guy making you doubt everything?"
+
+    show prompto frightened_sidecast
+    with dissolve
+
+    "He turns awfully silent. The sprinkling sound of snow beneath your feet becomes agonisingly loud."
+
+    show prompto frightened_tightlipped
+    with dissolve
+
+    prompto "I {i}really{/i} don't wanna talk about him."
+
+    "He shudders and it's so strong it's like someone's just walked over his grave. Then he blanks you, keeps walking like nothing's happened."
+
+    $ happiness -= 1
+
+    show expression Text("Happiness decreased",
+    size=35,
+    yalign=0.5,
+    xalign=0.5,
+    drop_shadow=(1, 1),
+    color="#fff",
+    outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]
+    ) as text
+    with dissolve
+
+    pause 0.5
+
+    hide text
+    with dissolve
+
+    jump real_life_rpg
+
+label dont_ask:
+
+    "You decide it's best not to dredge up the subject of his friend right now."
+
+    "After all, if they really did get separated in Cartanica, he's probably worried sick about him."
+
+    "The last thing he needs is the memory refreshed."
+
+    you "Well, I've never ridden a chocobo."
+
+    show prompto lightlaugh
+    with dissolve
+
+    prompto "Oh! It's super fun. If we ever wind up in Duscae again, I'll show you how it's done."
+
+    you "You'd show me? Really?"
+
+    $ happiness += 1
+
+    show expression Text("Happiness increased",
+    size=35,
+    yalign=0.5,
+    xalign=0.5,
+    drop_shadow=(1, 1),
+    color="#fff",
+    outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]
+    ) as text
+    with dissolve
+
+    pause 0.5
+
+    hide text
+    with dissolve
+
+    jump real_life_rpg

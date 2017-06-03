@@ -228,6 +228,7 @@ image prompto downcast  = "images/characters/prompto_downcast.png"
 image prompto semidowncast  = "images/characters/prompto_semidowncast.png"
 image side prompto semidowncast  = "images/characters/prompto_semidowncast.png"
 image prompto regrets  = "images/characters/prompto_regrets.png"
+image prompto resigned = "images/characters/prompto_resigned.png"
 image prompto frightened_tightlipped  = "images/characters/prompto_frightened_tightlipped.png"
 
 # raised looks
@@ -245,11 +246,14 @@ image prompto frightened  = "images/characters/prompto_frightened.png"
 
 # actions
 #image prompto scrutinisinggun  = "images/characters/prompto_scrutisninggun.png"
+image nextbutton = "images/ui/next_button.png"
 
 # smiles
 image prompto sadsmile  = "images/characters/prompto_sadsmile.png"
 image prompto neutralsmile  = "images/characters/prompto_neutralsmile.png"
+image prompto calmsmile  = "images/characters/prompto_calmsmile.png"
 image prompto downcastsmile  = "images/characters/prompto_downcastsmile.png"
+image side prompto downcastsmile  = "images/characters/prompto_downcastsmile.png"
 #image prompto sadlaugh = "images/characters/prompto_sadlaugh.png"
 
 # laughs

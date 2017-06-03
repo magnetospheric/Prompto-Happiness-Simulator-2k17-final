@@ -265,6 +265,12 @@ screen quick_menu():
 init python:
     config.overlay_screens.append("quick_menu")
 
+    #def character_callback(event, **kwargs):
+        #if event == "end":
+            #renpy.music.play("ping.ogg", channel="audio")
+
+    #config.all_character_callbacks.append(character_callback)
+
 default quick_menu = True
 
 style quick_button is default

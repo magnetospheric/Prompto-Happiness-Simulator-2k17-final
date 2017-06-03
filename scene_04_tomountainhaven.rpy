@@ -21,10 +21,17 @@ label to_mountain_haven:
     elif happiness <= 2:
         "It seems he doesn't really trust you."
 
-    show side prompto semidowncast:
-        alpha 1.0
-        time 1.5
-        linear 0.5 alpha 0.0
+    if happiness >= 4:
+        show side prompto downcastsmile:
+            alpha 1.0
+            time 1.5
+            linear 0.5 alpha 0.0
+    else:
+        show side prompto semidowncast:
+            alpha 1.0
+            time 1.5
+            linear 0.5 alpha 0.0
+
     show prompto dubious_sidecast:
         alpha 0.0
         time 1.5
@@ -45,7 +52,7 @@ label to_mountain_haven:
 
     "He nods."
 
-    prompto "You... probably know this land better than I do."
+    prompto "You... probably know this land better than I do. Got any ideas?"
 
     "You point at the distant mountains."
 
@@ -107,12 +114,29 @@ label to_mountain_haven:
 
 label trailbar:
 
-    "Prompto's eyes light up."
+    "Prompto's eyes widen."
 
     show prompto lightlaugh
     with dissolve
 
     prompto "Ooh, an energy bar!"
+
+    $ happiness += 2
+
+    show expression Text("Happiness increased!",
+    size=35,
+    yalign=0.5,
+    xalign=0.5,
+    drop_shadow=(1, 1),
+    color="#fff",
+    outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]
+    ) as text
+    with dissolve
+
+    pause 0.5
+
+    hide text
+    with dissolve
 
     you "Sort of. It's a trail bar. You're not allergic to nuts, are you?"
 
@@ -153,6 +177,23 @@ label tangerine:
 
     prompto "Thanks for the offer, though. Maybe when we're stopped. Fruit's actually a super good idea. Vitamins, and stuff."
 
+    $ happiness += 1
+
+    show expression Text("Happiness increased... slightly",
+    size=35,
+    yalign=0.5,
+    xalign=0.5,
+    drop_shadow=(1, 1),
+    color="#fff",
+    outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]
+    ) as text
+    with dissolve
+
+    pause 0.5
+
+    hide text
+    with dissolve
+
     you "Yeah, that's why I picked it. Maybe later, then?"
 
     "He nods, and you both continue on your way."
@@ -170,6 +211,23 @@ label candy:
     with dissolve
 
     prompto "I really shouldn't.{p=0.5}Sorry."
+
+    $ happiness += 0
+
+    show expression Text("No increase in happiness",
+    size=35,
+    yalign=0.5,
+    xalign=0.5,
+    drop_shadow=(1, 1),
+    color="#fff",
+    outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]
+    ) as text
+    with dissolve
+
+    pause 0.5
+
+    hide text
+    with dissolve
 
     "You feel a little guilty, although his avoidance is not something you could have predicted.{p=0.5}Your eyes search his for answers, but he shies away."
 
