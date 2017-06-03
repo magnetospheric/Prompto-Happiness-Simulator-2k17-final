@@ -16,6 +16,9 @@ label human:
 
         "After a while, Prompto speaks."
 
+        show prompto frightened
+        with dissolve
+
         prompto "Hey."
 
         "You raise your eyebrows, wait for him to continue."
@@ -23,6 +26,8 @@ label human:
         prompto "Do I look human to you?"
 
         prompto "Because {i}he's{/i} making me doubt it."
+
+        show prompto frightened_sidecast
 
         "He looks off to the side. There's something haunted in the way he does it, like he's expecting shadows round every corner."
 
@@ -63,25 +68,8 @@ label chocobos:
 
     "Your mind keeps drifting back to that odd question, though. {i}\'Do I look human?\'{/i}{p=0.5}What kind of thing makes a person ask something like that?"
 
-    menu:
+    jump final_doubts
 
-        "Mention the camera":
-
-            jump camera
-
-        "Leave it. There may be sad memories attached":
-
-            jump final_doubts
-
-label camera:
-
-    "You think now is probably a good time to change the subject."
-
-    you "Hey, is that a camera?"
-
-    you "Maybe you should "
-
-    prompto "Oh, you mean, like a selfie?"
 
 
 label final_doubts:
@@ -118,9 +106,13 @@ label hug:
 
     "You stop moving forward."
 
-    "\"Hey.\" You don't speak harshly at all, but the urgency in your voice makes him stop too."
+    you "Hey."
 
-    "\"You don't sound like a stuck record.\" And you hug him tight. Your hands are in a non-threatening position across his back and shoulders, and you simply focus on pouring out compassion, ready to stop should he give any indication he's uncomfortable. You barely know this man, but you can't stand to see him beat himself up."
+    "You don't speak harshly at all, but the urgency in your voice makes him stop too."
+
+    you "You don't sound like a stuck record."
+
+    "And you hug him tight. Your hands are in a non-threatening position across his back and shoulders, and you simply focus on pouring out compassion, ready to stop should he give any indication he's uncomfortable. You barely know this man, but you can't stand to see him beat himself up."
 
     "He leans into the hug."
 
@@ -132,13 +124,6 @@ label hug:
 
     prompto "Whew! Uh, that wasn't what I expected, but it... it was nice. Thanks."
 
-    menu:
-
-        "Hug him again":
-
-            jump second_hug
-
-        ""
 
 label comfort:
 

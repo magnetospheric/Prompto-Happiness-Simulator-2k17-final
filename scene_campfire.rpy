@@ -1,10 +1,26 @@
-label storm_approaching: # you only get this if you have X point, as otherwise he will have left in disappointment
 
-    "There's a sound on the horizon like a gunshot. You snap to attention, fearing it may be some of these strange enemies Prompto has been fighting. \n But it's just thunder."
+label camera_ask:
 
-    prompto "I sure don't like the look of those snow clouds."
+    menu:
 
-    "\"\""
+        "Mention the camera":
+
+            jump camera
+
+        "Leave it. There may be sad memories attached":
+
+            jump final_doubts
+
+label camera:
+
+    "You think now is probably a good time to change the subject."
+
+    you "Hey, is that a camera?"
+
+    you "Maybe you should "
+
+    prompto "Oh, you mean, like a selfie?"
+
 
 label campfire_comfort:
 
@@ -14,7 +30,11 @@ label campfire_comfort:
 
         "Hug him again":
 
-            "The end"
+            jump end
 
+
+label end:
+
+    "The end"
 
     return

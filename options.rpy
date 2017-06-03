@@ -215,14 +215,10 @@ init python:
 # define build.itch_project = "renpytom/test-project"
 
 
-
-
-
-
-
-
+####################
 #### Characters ####
-#define prompto = Character('Prompto', color="#fff2b5") # prompto has a light yellow colour
+####################
+
 define prompto = DynamicCharacter('prompto_name', color="#fff2b5")
 define you = DynamicCharacter('your_name', color="#b2b1c4")
 
@@ -230,11 +226,17 @@ define you = DynamicCharacter('your_name', color="#b2b1c4")
 # submissive
 image prompto downcast  = "images/characters/prompto_downcast.png"
 image prompto semidowncast  = "images/characters/prompto_semidowncast.png"
+image side prompto semidowncast  = "images/characters/prompto_semidowncast.png"
 image prompto regrets  = "images/characters/prompto_regrets.png"
 image prompto frightened_tightlipped  = "images/characters/prompto_frightened_tightlipped.png"
-image prompto frightened_sidecast  = "images/characters/prompto_frightened_sidecast.png"
+
+# raised looks
 image prompto raisedeyes = "images/characters/prompto_raisedeyes.png"
 image prompto raisedeyes_closed = "images/characters/prompto_raisedeyes_closed.png"
+
+# side looks
+image prompto dubious_sidecast  = "images/characters/prompto_dubious_sidecast.png"
+image prompto frightened_sidecast  = "images/characters/prompto_frightened_sidecast.png"
 
 # shock
 image prompto surprised  = "images/characters/prompto_surprised.png"
@@ -249,6 +251,8 @@ image prompto sadsmile  = "images/characters/prompto_sadsmile.png"
 image prompto neutralsmile  = "images/characters/prompto_neutralsmile.png"
 image prompto downcastsmile  = "images/characters/prompto_downcastsmile.png"
 #image prompto sadlaugh = "images/characters/prompto_sadlaugh.png"
+
+# laughs
 image prompto lightlaugh = "images/characters/prompto_lightlaugh.png"
 image prompto widelaugh = "images/characters/prompto_widelaugh.png"
 #image prompto relievedsmile = "images/characters/prompto_relievedsmile.png"

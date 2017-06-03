@@ -1,13 +1,13 @@
 label to_mountain_haven:
 
-    you "So, are you headed towards Niflheim, or you getting away?"
+    you "So, are you headed towards Niflheim?"
 
     "You can't imagine why anyone would be out here if they weren't either coming or going from the damn place."
 
     show prompto semidowncast
     with dissolve
 
-    prompto "Towards. I guess."
+    prompto "Yeah. I guess."
 
     "He doesn't seem keen to reveal any more at this stage."
 
@@ -21,7 +21,33 @@ label to_mountain_haven:
     elif happiness <= 2:
         "It seems he doesn't really trust you."
 
-    you "Come on. We should get going before nightfall. The daemons are pretty rough in these parts."
+    show side prompto semidowncast:
+        alpha 1.0
+        time 1.5
+        linear 0.5 alpha 0.0
+    show prompto dubious_sidecast:
+        alpha 0.0
+        time 1.5
+        linear 0.5 alpha 1.0
+
+    "There's a sound on the horizon like a gunshot. {alpha=0.0}ooooooooooooooooooooooooooooooooooooo{/alpha}{nw}" # 3.5 second delay
+
+    "There's a sound on the horizon like a gunshot.{fast} Prompto flinches."
+
+    "You snap to attention, fearing it may be some of those troopers Prompto has been running from.{p=0.5}But it's just thunder."
+
+    prompto "I sure don't like the look of those snow clouds."
+
+    you "Come on. We should get going before nightfall. The daemons are pretty rough in these parts, and we don't want to get caught up in a storm too."
+
+    show prompto dubious
+    with dissolve
+
+    "He nods."
+
+    prompto "You... probably know this land better than I do."
+
+    "You point at the distant mountains."
 
     #cut to view of mountains for a bit
     scene bg distant_mountain
@@ -49,7 +75,7 @@ label to_mountain_haven:
 
     scene bg plains_with_mountain
     with dissolve
-    
+
     if happiness <= 2:
 
         jump nofood
@@ -121,6 +147,9 @@ label tangerine:
     "He holds his gloved hands out, waving them about to make the point."
 
     "Good point. You don't want to risk either of you getting frostbite."
+
+    show prompto neutralsmile
+    with dissolve
 
     prompto "Thanks for the offer, though. Maybe when we're stopped. Fruit's actually a super good idea. Vitamins, and stuff."
 

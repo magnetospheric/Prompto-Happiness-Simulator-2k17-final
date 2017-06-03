@@ -5,7 +5,7 @@ label start:
 
     # TESTING NIFLHEIM #
     # set my starting variables:
-    $ happiness = 3
+    $ happiness = 4
 
     $ show_happiness = True
 
@@ -96,8 +96,8 @@ label apology:
 
     show expression Text("Happiness increased!",
     size=35,
-    yalign=0.5, # Centers the text -- Toward Bottom.
-    xalign=0.5, # Centers the text -- Toward Right.
+    yalign=0.5,
+    xalign=0.5,
     drop_shadow=(1, 1),
     color="#fff",
     outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]
@@ -145,8 +145,8 @@ label console:
 
     show expression Text("Happiness increased",
     size=35,
-    yalign=0.5, # Centers the text -- Toward Bottom.
-    xalign=0.5, # Centers the text -- Toward Right.
+    yalign=0.5,
+    xalign=0.5,
     drop_shadow=(1, 1),
     color="#fff",
     outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]
@@ -180,8 +180,8 @@ label pragmatic:
 
     show expression Text("No increase in happiness",
     size=35,
-    yalign=0.5, # Centers the text -- Toward Bottom.
-    xalign=0.5, # Centers the text -- Toward Right.
+    yalign=0.5,
+    xalign=0.5,
     drop_shadow=(1, 1),
     color="#fff",
     outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]

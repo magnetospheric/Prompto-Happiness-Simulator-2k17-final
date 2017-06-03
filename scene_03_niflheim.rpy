@@ -24,13 +24,23 @@ label niflheim:
 
 label like_niflheim:
 
+    you "Yeah - I live in the capital, Gralea. It's pretty nice."
+
+    show prompto dubious
+    with dissolve
+
+    prompto "You think?"
+
+    you "Sure, I mean, Niflheim's the strongest military nation on Eos. Rather be there than anywhere else."
+
+    "He looks like he has so many things he wants to say, but he holds his tongue.{p=0.5}His eyes say everything he needs to."
 
     $ happiness += 0
 
     show expression Text("No increase in happiness",
     size=35,
-    yalign=0.5, # Centers the text -- Toward Bottom.
-    xalign=0.5, # Centers the text -- Toward Right.
+    yalign=0.5,
+    xalign=0.5,
     drop_shadow=(1, 1),
     color="#fff",
     outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]
@@ -41,6 +51,10 @@ label like_niflheim:
 
     hide text
     with dissolve
+
+    "You consider justifying yourself, but you don't want to upset him any further. An awkward silence falls between you."
+
+    "Eventually you have to ask."
 
     jump to_mountain_haven
 
@@ -73,8 +87,8 @@ label hate_niflheim:
 
     show expression Text("Happiness increased!",
     size=35,
-    yalign=0.5, # Centers the text -- Toward Bottom.
-    xalign=0.5, # Centers the text -- Toward Right.
+    yalign=0.5,
+    xalign=0.5,
     drop_shadow=(1, 1),
     color="#fff",
     outlines=[ (8, "#efefef", 0, 0), (2, "#323345", 0, 0) ]
