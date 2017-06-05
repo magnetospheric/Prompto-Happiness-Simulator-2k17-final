@@ -221,18 +221,19 @@ define gui.choice_button_text_hover_color = "#1b1b25"
 ## image, and text describing the contents of the save slot. A save slot uses
 ## image files in gui/button, like the other kinds of buttons.
 
-## The save slot button.
-define gui.slot_button_width = 204
-define gui.slot_button_height = 153
-define gui.slot_button_borders = Borders(0, 0, 0, 0)
-define gui.slot_button_text_size = 14
-define gui.slot_button_text_xalign = 0.5
-define gui.slot_button_text_idle_color = "#ecf3ff"
-define gui.slot_button_text_hover_color = "#ecf3ff"
-
 ## The width and height of thumbnails used by the save slots.
 define config.thumbnail_width = 204
 define config.thumbnail_height = 153
+
+## The save slot button.
+define gui.slot_button_width = 204
+define gui.slot_button_height = 173
+define gui.slot_button_borders = Borders(0, 0, 0, 0)
+define gui.slot_button_text_size = 14
+define gui.slot_button_text_xalign = 0.5
+define gui.slot_button_text_borders = Borders(0, 0, 0, 0)
+define gui.slot_button_text_idle_color = "#ecf3ff"
+define gui.slot_button_text_hover_color = "#ecf3ff"
 
 ## The number of columns and rows in the grid of save slots.
 define gui.file_slot_cols = 3
@@ -270,7 +271,7 @@ define gui.pref_button_spacing = 0
 define gui.page_spacing = 0
 
 ## The spacing between file slots.
-define gui.slot_spacing = 10
+define gui.slot_spacing = 15
 
 ## The position of the main menu text.
 define gui.main_menu_text_xalign = 1.0

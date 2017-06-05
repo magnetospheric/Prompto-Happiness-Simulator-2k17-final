@@ -604,11 +604,10 @@ screen game_menu(title, scroll=None):
 
         action Return()
 
-    label title
+    # label title
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
-
 
 style game_menu_outer_frame is empty
 style game_menu_navigation_frame is empty
@@ -717,12 +716,15 @@ screen save():
 
     tag menu
 
-    use file_slots(_("Save"))
+    use file_slots(_("Saveeee"))
 
 
 screen load():
 
     tag menu
+
+    frame:
+        style "title_frame_save"
 
     use file_slots(_("Load"))
 
@@ -732,6 +734,13 @@ screen file_slots(title):
     use game_menu(title):
 
         fixed:
+
+            if title == "Load":
+                frame:
+                    style "title_frame_load"
+            else:
+                frame:
+                    style "title_frame_save"
 
             ## This ensures the input will get the enter event before any of the
             ## buttons do.
@@ -752,6 +761,7 @@ screen file_slots(title):
 
                     button:
                         action FileAction(slot)
+                        style "custom_slot_button"
 
                         has vbox
 
@@ -787,8 +797,22 @@ style slot_button_text is gui_button_text
 style slot_time_text is slot_button_text
 style slot_name_text is slot_button_text
 
+style title_frame_save:
+    background "images/ui/save_title.png"
+    xpos 15
+    ypos 20
+
+style title_frame_load:
+    background "images/ui/load_title.png"
+    xpos 15
+    ypos 20
+
+style custom_slot_button:
+    background "ui/slot_bg.png"
+    hover_background "ui/slot_bg_hover.png"
+
 style page_label:
-    xpadding 50
+    xpadding 0
     ypadding 3
 
 style page_label_text:
