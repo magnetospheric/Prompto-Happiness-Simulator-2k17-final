@@ -300,15 +300,15 @@ style quick_button_text:
 
 screen navigation():
 
-    vbox:
-        style_prefix "navigation"
+    if main_menu:
 
-        xalign 0.82
-        yalign 0.89
+        vbox:
+            style_prefix "navigation"
 
-        spacing 0
+            xalign 0.82
+            yalign 0.92
 
-        if main_menu:
+            spacing 0
 
             textbutton _("{k=-1.0}NEW GAME{/k}"):
                 style "menu_item_1"
@@ -344,44 +344,63 @@ screen navigation():
                     text_style "menu_item_text"
                     action Quit(confirm=not main_menu)
 
-        else:
+            if _in_replay:
 
-            textbutton _("Save"):
-                style "menu_item_ingame"
+                textbutton _("End Replay") action EndReplay(confirm=True)
+
+    else:
+
+        hbox:
+
+            style_prefix "navigation_ingame"
+
+            xalign 0.48
+            yalign 0.84
+
+            spacing 0
+
+            textbutton _("{k=-0.4}SAVE{/k}"):
+                style "menu_item_ingame1"
+                text_style "ingame_menu_item_text"
                 action ShowMenu("save")
 
-            textbutton _("Load"):
-                style "menu_item_ingame"
+            textbutton _("{k=-0.4}LOAD{/k}"):
+                style "menu_item_ingame2"
+                text_style "ingame_menu_item_text"
                 action ShowMenu("load")
 
-            textbutton _("Options"):
-                style "menu_item_ingame"
+            textbutton _("{k=-0.4}OPTIONS{/k}"):
+                style "menu_item_ingame3"
+                text_style "ingame_menu_item_text"
                 action ShowMenu("preferences")
 
-            textbutton _("About"):
-                style "menu_item_ingame"
+            textbutton _("{k=-0.4}ABOUT{/k}"):
+                style "menu_item_ingame4"
+                text_style "ingame_menu_item_text"
                 action ShowMenu("about")
 
-        if _in_replay:
+            if _in_replay:
 
-            textbutton _("End Replay") action EndReplay(confirm=True)
+                textbutton _("End Replay") action EndReplay(confirm=True)
 
-        elif not main_menu:
 
-            textbutton _("Main Menu"):
-                style "menu_item_ingame"
+            textbutton _("{k=-0.4}MAIN MENU{/k}"):
+                style "menu_item_ingame5"
+                text_style "ingame_menu_item_text"
                 action MainMenu()
 
             if renpy.variant("pc"):
 
                     ## Help isn't necessary or relevant to mobile devices.
-                    textbutton _("Help"):
-                        style "menu_item_ingame"
+                    textbutton _("{k=-0.4}HELP{/k}"):
+                        style "menu_item_ingame6"
+                        text_style "ingame_menu_item_text"
                         action ShowMenu("help")
 
                     ## The quit button is banned on iOS and unnecessary on Android.
-                    textbutton _("Quit"):
-                        style "menu_item_ingame"
+                    textbutton _("{k=-0.4}QUIT{/k}"):
+                        style "menu_item_ingame7"
+                        text_style "ingame_menu_item_text"
                         action Quit(confirm=not main_menu)
 
 
@@ -402,6 +421,12 @@ style menu_item_text is text:
     color "#fff"
     size 18
 
+style ingame_menu_item_text is text:
+    hover_color "#d0ddf4"
+    outlines [ (2, "#fff", 0, 0), (3, "#a3aec0", 1, 0) ]
+    color "#fff"
+    size 20
+
 style menu_item_1:
     left_margin 0
 
@@ -420,8 +445,20 @@ style menu_item_5:
 style menu_item_6:
     left_margin 90
 
-style menu_item_ingame:
-    left_margin 100
+style menu_item_ingame1:
+    left_margin 20
+style menu_item_ingame2:
+    left_margin 20
+style menu_item_ingame3:
+    left_margin 20
+style menu_item_ingame4:
+    left_margin 20
+style menu_item_ingame5:
+    left_margin 20
+style menu_item_ingame6:
+    left_margin 20
+style menu_item_ingame7:
+    left_margin 20
 
 
 ## Main Menu screen ############################################################
@@ -491,12 +528,14 @@ screen main_menu():
     ## This empty frame darkens the main menu.
     frame:
         xalign -300
-        ypos 508
+        ypos 526
         background "ui/main_menu_bg.png"
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
-    use navigation
+
+    if is_load_screen == False:
+        use navigation
 
     if gui.show_name:
 
@@ -679,21 +718,34 @@ screen about():
 
         style_prefix "about"
 
-        vbox:
+        fixed:
 
-            label "[config.name!t]"
-            text _("Version [config.version!t]\n")
+            frame:
+                style "title_frame_about"
 
-            ## gui.about is usually set in options.rpy.
-            if gui.about:
-                text "[gui.about!t]\n"
+            vbox:
 
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+                xpos 0.1
+                ypos 0.25
+                xsize 0.8
+
+                label "[config.name!t]"
+                text _("Version [config.version!t]\n")
+
+                ## gui.about is usually set in options.rpy.
+                if gui.about:
+                    text "[gui.about!t]\n"
+
+                text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
 
 ## This is redefined in options.rpy to add text to the about screen.
 define gui.about = ""
 
+style title_frame_about:
+    background "images/ui/about_title.png"
+    xpos 15
+    ypos 20
 
 style about_label is gui_label
 style about_label_text is gui_label_text
@@ -716,15 +768,14 @@ screen save():
 
     tag menu
 
-    use file_slots(_("Saveeee"))
+    use file_slots(_("Save"))
 
 
 screen load():
 
-    tag menu
+    $ is_load_screen = True
 
-    frame:
-        style "title_frame_save"
+    tag menu
 
     use file_slots(_("Load"))
 
@@ -751,7 +802,7 @@ screen file_slots(title):
                 style_prefix "slot"
 
                 xalign 0.5
-                yalign 0.5
+                yalign 0.45
 
                 spacing gui.slot_spacing
 
@@ -851,86 +902,87 @@ screen preferences():
 
     use game_menu(_("Preferences"), scroll="viewport"):
 
-        vbox:
+        fixed:
+            frame:
+                style "title_frame_options"
 
-            hbox:
-                box_wrap True
+            vbox:
+                xpos 0.13
+                ypos 0.23
 
-                if renpy.variant("pc"):
+                hbox:
+                    box_wrap True
+
+                    if renpy.variant("pc"):
+
+                        vbox:
+                            style_prefix "radio"
+                            label _("Display")
+                            textbutton _("Window") action Preference("display", "window")
+                            textbutton _("Fullscreen") action Preference("display", "fullscreen")
 
                     vbox:
                         style_prefix "radio"
-                        label _("Display")
-                        textbutton _("Window") action Preference("display", "window")
-                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                        label _("Rollback Side")
+                        textbutton _("Disable") action Preference("rollback side", "disable")
+                        textbutton _("Left") action Preference("rollback side", "left")
+                        textbutton _("Right") action Preference("rollback side", "right")
 
-                vbox:
-                    style_prefix "radio"
-                    label _("Rollback Side")
-                    textbutton _("Disable") action Preference("rollback side", "disable")
-                    textbutton _("Left") action Preference("rollback side", "left")
-                    textbutton _("Right") action Preference("rollback side", "right")
+                    vbox:
+                        style_prefix "check"
+                        label _("Skip")
+                        textbutton _("Unseen Text") action Preference("skip", "toggle")
+                        textbutton _("After Choices") action Preference("after choices", "toggle")
+                        textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
 
-                vbox:
-                    style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+                    ## Additional vboxes of type "radio_pref" or "check_pref" can be
+                    ## added here, to add additional creator-defined preferences.
 
-                ## Additional vboxes of type "radio_pref" or "check_pref" can be
-                ## added here, to add additional creator-defined preferences.
+                null height (4 * gui.pref_spacing)
 
-            null height (4 * gui.pref_spacing)
+                hbox:
+                    style_prefix "slider"
+                    box_wrap True
 
-            hbox:
-                style_prefix "slider"
-                box_wrap True
+                    vbox:
 
-                vbox:
+                        label _("Text Speed")
 
-                    label _("Text Speed")
+                        bar value Preference("text speed")
 
-                    bar value Preference("text speed")
+                        label _("Auto-Forward Time")
 
-                    label _("Auto-Forward Time")
+                        bar value Preference("auto-forward time")
 
-                    bar value Preference("auto-forward time")
+                    vbox:
 
-                vbox:
+                        if config.has_music:
+                            label _("Music Volume")
 
-                    if config.has_music:
-                        label _("Music Volume")
+                            hbox:
+                                bar value Preference("music volume")
 
-                        hbox:
-                            bar value Preference("music volume")
+                        if config.has_sound:
 
-                    if config.has_sound:
+                            label _("Sound Volume")
 
-                        label _("Sound Volume")
+                            hbox:
+                                bar value Preference("sound volume")
 
-                        hbox:
-                            bar value Preference("sound volume")
+                                if config.sample_sound:
+                                    textbutton _("Test") action Play("sound", config.sample_sound)
 
-                            if config.sample_sound:
-                                textbutton _("Test") action Play("sound", config.sample_sound)
+                        if config.has_music or config.has_sound or config.has_voice:
+                            null height gui.pref_spacing
 
+                            textbutton _("Mute All"):
+                                action Preference("all mute", "toggle")
+                                style "mute_all_button"
 
-                    if config.has_voice:
-                        label _("Voice Volume")
-
-                        hbox:
-                            bar value Preference("voice volume")
-
-                            if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
-
-                    if config.has_music or config.has_sound or config.has_voice:
-                        null height gui.pref_spacing
-
-                        textbutton _("Mute All"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
+style title_frame_options:
+    background "images/ui/options_title.png"
+    xpos 15
+    ypos 20
 
 
 style pref_label is gui_label
@@ -1104,24 +1156,36 @@ screen help():
 
         style_prefix "help"
 
-        vbox:
-            spacing 15
+        fixed:
 
-            hbox:
+            frame:
+                style "title_frame_help"
 
-                textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
-                textbutton _("Mouse") action SetScreenVariable("device", "mouse")
+            vbox:
+                spacing 8
+                ypos 0.22
+                xpos 0.02
 
-                if GamepadExists():
-                    textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
+                hbox:
 
-            if device == "keyboard":
-                use keyboard_help
-            elif device == "mouse":
-                use mouse_help
-            elif device == "gamepad":
-                use gamepad_help
+                    textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
+                    textbutton _("Mouse") action SetScreenVariable("device", "mouse")
 
+                    if GamepadExists():
+                        textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
+
+                if device == "keyboard":
+                    use keyboard_help
+                elif device == "mouse":
+                    use mouse_help
+                elif device == "gamepad":
+                    use gamepad_help
+
+
+style title_frame_help:
+    background "images/ui/help_title.png"
+    xpos 15
+    ypos 20
 
 screen keyboard_help():
 
@@ -1235,12 +1299,18 @@ style help_button:
 style help_button_text:
     properties gui.button_text_properties("help_button")
 
+style help_text:
+    size 16
+
+style hyperlink_text:
+    size 16
+
 style help_label:
     xsize 250
     right_padding 20
 
 style help_label_text:
-    size gui.text_size
+    size 16
     xalign 1.0
     text_align 1.0
 
