@@ -168,14 +168,14 @@ label tangerine:
 
     prompto "Besides, gloves."
 
-    "He holds his gloved hands out, waving them about to make the point."
+    "He holds his gloved hands out, waving them about to illustrate what he means."
 
     "Good point. You don't want to risk either of you getting frostbite."
 
     show prompto neutralsmile
     with dissolve
 
-    prompto "Thanks for the offer, though. Maybe when we're stopped. Fruit's actually a super good idea. Vitamins, and stuff."
+    prompto "Thanks for the offer, though. Maybe when we're stopped. Fruit's actually a super good idea. Vitamins, and stuff, y'know."
 
     $ happiness += 1
 

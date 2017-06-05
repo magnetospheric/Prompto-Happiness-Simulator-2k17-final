@@ -96,6 +96,8 @@ label hug:
 
     prompto "Whew! Uh, that wasn't what I expected, but it... it was nice. Thanks."
 
+    you "Hey, no problem - I just hope it helped."
+
     jump continue_to_cavern
 
 
@@ -238,7 +240,7 @@ label continue_to_cavern:
 
     "Prompto smiles, and sings jauntily as you both tackle the remaining snowdrifts separating you from the cavern."
 
-    prompto "There's no business like snow business!"
+    prompto "{i}There's no business like snow business!{/i}"
 
     "It's a variation on a musical number you remember seeing once in Tenebrae. You remember the film was about a sharpshooter, and you find it kind of cute, all things considered, that he'd be singing it."
 

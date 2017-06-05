@@ -233,9 +233,9 @@ image glow:
     "images/ui/next_button_hover_small.png"
     linear 0.5 alpha 0.0
     "images/ui/next_button_hover_small.png"
-    linear 0.5 alpha 0.6
+    linear 0.5 alpha 0.8
     repeat
-    
+
 
 #### Character Images ####
 # submissive

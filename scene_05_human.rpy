@@ -39,6 +39,8 @@ label human:
 
         "You raise your eyebrows, wait for him to continue."
 
+        prompto "This might sound super weird, but..."
+
         prompto "Do I look human to you?"
 
         prompto "Because {i}he's{/i} making me doubt it."
@@ -217,7 +219,7 @@ label dont_ask:
 
     "The last thing he needs is the memory refreshed."
 
-    you "Well, I've never ridden a chocobo."
+    you "Well, I've never ridden a chocobo. Always wanted to."
 
     show prompto lightlaugh
     with dissolve
@@ -242,5 +244,7 @@ label dont_ask:
 
     hide text
     with dissolve
+
+    prompto "Duuude, of course!"
 
     jump real_life_rpg
