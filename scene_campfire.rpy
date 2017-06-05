@@ -9,7 +9,7 @@ label camera_ask:
 
         "Leave it. There may be sad memories attached":
 
-            jump final_doubts
+            jump valley
 
 label valley:
 

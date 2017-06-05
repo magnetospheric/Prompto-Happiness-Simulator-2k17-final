@@ -24,8 +24,6 @@ label splashscreen:
     scene black
     with Pause(1)
 
-    #play sound "ping.ogg"
-
     show producer with dissolve
     with Pause(2)
 

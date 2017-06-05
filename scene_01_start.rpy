@@ -1,13 +1,14 @@
 #### Game Start ####
 
 #testing
-label start:
+label starttest:
 
     # TESTING NIFLHEIM #
     # set my starting variables:
     $ happiness = 4
 
     $ show_happiness = True
+    # $ show_next = False
 
     $ prompto_name = "Prompto"
     $ your_name = "You"
@@ -19,7 +20,7 @@ label start:
 
     jump niflheim
 
-label start01:
+label start:
 
     # set my starting variables:
     $ happiness = 2

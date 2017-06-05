@@ -260,18 +260,24 @@ screen quick_menu():
             textbutton _("Prefs") action ShowMenu('preferences')
 
 
+screen my_input_screen:
+    frame:
+        xalign 0.5 yalign 0.5
+        xminimum 500 xmaximum 500
+        hbox:
+            textbutton _("Foob")
+            #textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+
+default event_list = []
+default back_next_button = None
+
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
 ## the player has not explicitly hidden the interface.
 init python:
     config.overlay_screens.append("quick_menu")
 
-    #def character_callback(event, **kwargs):
-        #if event == "end":
-            #renpy.music.play("ping.ogg", channel="audio")
-
-    #config.all_character_callbacks.append(character_callback)
-
 default quick_menu = True
+default show_next = False
 
 style quick_button is default
 style quick_button_text is button_text
@@ -340,15 +346,23 @@ screen navigation():
 
         else:
 
-            textbutton _("History") action ShowMenu("history")
+            #textbutton _("History") action ShowMenu("history")
 
-            textbutton _("Save") action ShowMenu("save")
+            textbutton _("Save"):
+                style "menu_item_ingame"
+                action ShowMenu("save")
 
-            textbutton _("Load") action ShowMenu("load")
+            textbutton _("Load"):
+                style "menu_item_ingame"
+                action ShowMenu("load")
 
-            textbutton _("Options") action ShowMenu("preferences")
+            textbutton _("Options"):
+                style "menu_item_ingame"
+                action ShowMenu("preferences")
 
-            textbutton _("About") action ShowMenu("about")
+            textbutton _("About"):
+                style "menu_item_ingame"
+                action ShowMenu("about")
 
         if _in_replay:
 
@@ -356,15 +370,21 @@ screen navigation():
 
         elif not main_menu:
 
-            textbutton _("Main Menu") action MainMenu()
+            textbutton _("Main Menu"):
+                style "menu_item_ingame"
+                action MainMenu()
 
             if renpy.variant("pc"):
 
                     ## Help isn't necessary or relevant to mobile devices.
-                    textbutton _("Help") action ShowMenu("help")
+                    textbutton _("Help"):
+                        style "menu_item_ingame"
+                        action ShowMenu("help")
 
                     ## The quit button is banned on iOS and unnecessary on Android.
-                    textbutton _("Quit") action Quit(confirm=not main_menu)
+                    textbutton _("Quit"):
+                        style "menu_item_ingame"
+                        action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -401,6 +421,9 @@ style menu_item_5:
 
 style menu_item_6:
     left_margin 90
+
+style menu_item_ingame:
+    left_margin 100
 
 
 ## Main Menu screen ############################################################

@@ -219,8 +219,23 @@ init python:
 #### Characters ####
 ####################
 
-define prompto = DynamicCharacter('prompto_name', color="#fff2b5")
-define you = DynamicCharacter('your_name', color="#b2b1c4")
+define prompto = DynamicCharacter('prompto_name', color="#fff2b5", ctc="ctc_blink", ctc_position="fixed")
+define you = DynamicCharacter('your_name', color="#b2b1c4", ctc="ctc_blink", ctc_position="fixed")
+define narrator = Character(ctc="ctc_blink", ctc_position="fixed")
+
+image ctc_blink = LiveComposite(
+    (65, 65),
+    (930, 685), "images/ui/next_button_small.png",
+    (930, 685), "glow",
+    )
+
+image glow:
+    "images/ui/next_button_hover_small.png"
+    linear 0.5 alpha 0.0
+    "images/ui/next_button_hover_small.png"
+    linear 0.5 alpha 0.6
+    repeat
+    
 
 #### Character Images ####
 # submissive
