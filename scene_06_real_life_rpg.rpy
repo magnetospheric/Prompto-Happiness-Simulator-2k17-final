@@ -2,18 +2,16 @@ label real_life_rpg:
 
     "You're almost at the foot of the mountains now. Here, the snowdrifts run so deep you both sink in almost to your knees."
 
-    "At points the frustration leads both of you to curse and stumble."
+    if happiness > 4:
 
-    show prompto resigned
+        "At first, Prompto laughs. But after a while the difficult terrain starts to get the better of you both."
+
+    "Soon the frustration leads both of you to curse and stumble."
+
+    show prompto dubious
     with dissolve
 
     prompto "Ugh, this is a total mess."
-
-    show prompto dubious
-    with dissolve
-
-    show prompto dubious
-    with dissolve
 
     prompto "You know, all those times when I said this was like a real-life RPG, I didn't actually expect it to have a, y'know, major character death. Or a deep backstory arc. Where you find out the character's tragic past or whatever. It's not fun when it happens to you."
 
@@ -29,7 +27,7 @@ label real_life_rpg:
 
     prompto "I probably sound like a stuck record by now, but ... I didn't want any of this to happen."
 
-    "He looks pretty upset..."
+    "He looks pretty upset. It's clear he's blaming himself. You know this is the perfect moment to do something, so you..."
 
     menu:
 
@@ -143,12 +141,12 @@ label joke:
 
     prompto "Still don't think I've levelled up enough for this, though."
 
-    you "Means you get more EXP, though."
+    you "Means you get more EXP, right?"
 
     show prompto widelaugh
     with dissolve
 
-    "He laughs"
+    "He chuckles."
 
     $ happiness += 2
 
