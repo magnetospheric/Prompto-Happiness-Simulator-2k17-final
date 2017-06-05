@@ -226,15 +226,20 @@ define narrator = Character(ctc="ctc_blink", ctc_position="fixed")
 
 image ctc_blink = LiveComposite(
     (65, 65),
-    (930, 685), "images/ui/next_button_small.png",
+    (930, 685), "ctc_base",
     (930, 685), "glow",
     )
 
+image ctc_base:
+    "images/ui/next_button_small.png"
+    linear 0.8 alpha 0.9
+    repeat
+
 image glow:
     "images/ui/next_button_hover_small.png"
-    linear 0.5 alpha 0.0
+    linear 0.9 alpha 0.0
     "images/ui/next_button_hover_small.png"
-    linear 0.5 alpha 0.8
+    linear 0.9 alpha 0.4
     repeat
 
 
