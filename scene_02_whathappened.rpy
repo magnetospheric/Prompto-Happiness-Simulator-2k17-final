@@ -93,7 +93,7 @@ label justtobesure:
             jump after_user_name_set
         "No":
             $ your_name = ""
-            jump redoname
+            jump setname
 
 label after_user_name_set:
 

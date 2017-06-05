@@ -281,3 +281,13 @@ image prompto widelaugh = "images/characters/prompto_widelaugh.png"
 image bg snowy_plains = 'images/backgrounds/snowy_plains.png'
 image bg distant_mountain = 'images/backgrounds/distant_mountain.png'
 image bg plains_with_mountain = 'images/backgrounds/plains_with_mountain.png'
+
+# image snow = "images/sprites/black_snow.png"
+image snow = SnowBlossom("images/sprites/big_snow.png", count=50)
+
+
+image snow = Fixed(
+        SnowBlossom(im.Alpha("images/sprites/big_snow.png",0.7), count=2, start=10, yspeed=(40,80)),
+        SnowBlossom(im.Alpha("images/sprites/medium_snow.png",0.8), count=7, start=10, yspeed=(40,80)),
+        SnowBlossom(im.Alpha("images/sprites/small_snow.png",0.9), count=10, start=10, yspeed=(40,80)),
+        SnowBlossom(im.Alpha("images/sprites/tiny_snow.png",0.99), count=20, start=5, yspeed=(40,80)) )

@@ -1,3 +1,8 @@
+label inside_haven:
+
+    hide blossoms with dissolve
+
+    jump valley
 
 label camera_ask:
 

@@ -35,6 +35,7 @@ label start:
     with fade
 
     # have some snowflake effects cross the screen
+    show snow
 
     "Nothing but endless snow for miles."
 
