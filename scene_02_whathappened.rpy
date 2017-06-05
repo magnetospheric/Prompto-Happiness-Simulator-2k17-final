@@ -74,11 +74,36 @@ label what_happened:
 
     $ prompto_name = "Prompto"
 
-    "You introduce yourself, and he nods as you speak your name."
+    "You introduce yourself."
 
-    prompto "That's a real nice name. So, you wanted to know what happened, huh?"
+    jump setname
+
+label setname:
+
+    python:
+        your_name = renpy.input("Type in your name.")
+        your_name = your_name.strip()
+        if not your_name:
+            your_name = "Ilia"
+    "[your_name], is that right?"
+
+label justtobesure:
+    menu:
+        "Yes":
+            jump after_user_name_set
+        "No":
+            $ your_name = ""
+            jump redoname
+
+label after_user_name_set:
+
+    "He nods as you speak your name."
+
+    prompto "[your_name]. That's a real nice name. So, you wanted to know what happened, huh?"
 
     "You nod."
+
+    you "Yeah, if it's not too much bother."
 
     show prompto raisedeyes
     with dissolve
