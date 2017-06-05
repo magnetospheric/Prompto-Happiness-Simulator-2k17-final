@@ -247,26 +247,11 @@ screen quick_menu():
         hbox:
             style_prefix "quick"
 
-            xalign 0.5
-            yalign 1.0
+            xalign 0.94
+            yalign 0.76
 
-            #textbutton _("Back") action Rollback()
-            #textbutton _("History") action ShowMenu('history')
-            #textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            #textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            #textbutton _("Q.Save") action QuickSave()
-            #textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
-
-
-screen my_input_screen:
-    frame:
-        xalign 0.5 yalign 0.5
-        xminimum 500 xmaximum 500
-        hbox:
-            textbutton _("Foob")
-            #textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            textbutton _("{k=+1.0}SAVE{/k}") action ShowMenu('save')
+            textbutton _("{k=+1.0}OPTIONS{/k}") action ShowMenu('preferences')
 
 default event_list = []
 default back_next_button = None
@@ -277,9 +262,9 @@ init python:
     config.overlay_screens.append("quick_menu")
 
 default quick_menu = True
-default show_next = False
 
 style quick_button is default
+style quick_button_text
 style quick_button_text is button_text
 
 style quick_button:
@@ -638,7 +623,7 @@ screen game_menu(title, scroll=None):
 
     use navigation
 
-    textbutton _("Return"):
+    textbutton _("{k=-0.4}RETURN{/k}"):
         style "return_button"
 
         action Return()
@@ -664,7 +649,6 @@ style return_button_text is navigation_button_text
 style game_menu_outer_frame:
     bottom_padding 30
     top_padding 0
-
     background "images/ui/save_menu_bg.png"
 
 style game_menu_navigation_frame:
@@ -699,6 +683,11 @@ style return_button:
     xpos gui.navigation_xpos
     yalign 1.0
     yoffset -30
+
+style return_button_text:
+    size 26
+    color "#fff"
+    hover_color "#d0ddf4"
 
 
 ## About screen ################################################################
@@ -835,9 +824,6 @@ screen file_slots(title):
                 yalign 1.0
 
                 spacing gui.page_spacing
-
-                if config.has_autosave:
-                    textbutton _("{#auto_page}Autosaves") action FilePage("auto")
 
 style page_label is gui_label
 style page_label_text is gui_label_text

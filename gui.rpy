@@ -187,10 +187,13 @@ define gui.confirm_button_text_xalign = 0.5
 
 define gui.page_button_borders = Borders(10, 4, 10, 4)
 
-define gui.quick_button_borders = Borders(10, 4, 10, 0)
-define gui.quick_button_text_size = 14
-define gui.quick_button_text_idle_color = gui.idle_small_color
-define gui.quick_button_text_selected_color = gui.accent_color
+define gui.quick_button_borders = Borders(10, 4, 10, 4)
+define gui.quick_button_text_size = 20
+define gui.quick_button_text_idle_color = "#fff"
+define gui.quick_button_text_selected_color = "#d0ddf4"
+define gui.quick_button_text_hover_color = "#d0ddf4"
+define gui.quick_button_text_outlines = [ (2, "#fff", 0, 0), (2, "#6e7682", 1, 0) ]
+
 
 ## You can also add your own customizations, by adding properly-named variables.
 ## For example, you can uncomment the following line to set the width of a
