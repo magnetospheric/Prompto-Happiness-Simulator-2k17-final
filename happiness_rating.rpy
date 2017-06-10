@@ -3,11 +3,11 @@ init python:
     #This controls when the love-points floater appears.
     show_happiness=False
 
-    ## ------------ Love Points Floater ----------------------
+    ## ------------ Happiness Floater ----------------------
 
     def stats_overlay():
 
-        # --- Giselle's Love Bar -------
+        # --- Happiness Bar -------
         if show_happiness:
             # set up a transparent frame to put things in
             ui.frame(
@@ -34,7 +34,7 @@ init python:
 
 init -2 python:
     happiness = 2
-    max_happiness = 30
+    max_happiness = 18.6
 
 init -5 python:
     #custom bar

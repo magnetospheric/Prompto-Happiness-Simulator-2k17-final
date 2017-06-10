@@ -5,10 +5,12 @@ label starttest:
 
     # TESTING NIFLHEIM #
     # set my starting variables:
-    $ happiness = 4
+    $ happiness = 13
 
-    $ show_happiness = True
-    # $ show_next = False
+    $ show_happiness = False
+    $ show_snow = True
+    $ trailbar_selected = False
+    $ tangerine_selected = False
 
     $ prompto_name = "Prompto"
     $ your_name = "You"
@@ -18,7 +20,7 @@ label starttest:
     show prompto dubious
     with dissolve
 
-    jump niflheim
+    jump inside_haven
 
 label start:
 
@@ -26,16 +28,39 @@ label start:
     $ happiness = 2
 
     $ show_happiness = False
+    $ show_snow = True
+    $ trailbar_selected = False
+    $ tangerine_selected = False
 
     $ prompto_name = "Stranger"
     $ your_name = "You"
 
-    # set the scene
-    scene bg snowy_plains
-    with fade
+    scene bg black
+    with slowfade
+
+    play music snowplains loop
 
     # have some snowflake effects cross the screen
     show snow
+
+    pause 5
+
+    scene bg yellow
+    with slowdissolve
+
+    # have some snowflake effects cross the screen
+    show snow
+
+    play sound footsteps loop
+
+    # set the scene with slow transition
+    scene bg snowy_plains
+    with slowdissolve
+
+    # have some snowflake effects cross the screen
+    show snow
+
+    $ quick_menu = True
 
     "Nothing but endless snow for miles."
 
@@ -54,7 +79,9 @@ label start:
 
     "The figure is that of a young man. Striking blond hair pokes out from under a warm woollen cap to glint in the sunlight. He's swamped in a bulky winter coat that makes his legs look stick-thin beneath it."
 
-    "It looks like he's lost in thought.{p=0.5}But from this distance, you can't really tell.{p=0.5}You approach slowly."
+    "It looks like he's lost in thought.{p=0.5}But from this distance, you can't really tell.{p=0.7}You approach slowly."
+
+    stop sound fadeout 2.0
 
     you "Hi."
 
@@ -93,6 +120,8 @@ label apology:
     with dissolve
 
     $ show_happiness = True
+
+    pause 1.0
 
     $ happiness += 2
 
@@ -143,6 +172,8 @@ label console:
 
     $ show_happiness = True
 
+    pause 1.0
+
     $ happiness += 1
 
     show expression Text("Happiness increased",
@@ -177,6 +208,8 @@ label pragmatic:
     prompto "I mean, you get it, right?"
 
     $ show_happiness = True
+
+    pause 1.0
 
     $ happiness += 0
 

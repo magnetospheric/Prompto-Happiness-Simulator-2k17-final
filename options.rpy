@@ -202,6 +202,9 @@ init python:
 
     config.custom_text_tags["big"] = big_tag
 
+ #renpy.music.register_channel(name, mixer=None, loop=None, stop_on_mute=True, tight=False, file_prefix='', file_suffix='', buffer_queue=True, movie=False)
+$ renpy.music.set_volume(0.5)
+$ renpy.sound.set_volume(0.5)
 
 ## A Google Play license key is required to download expansion files and perform
 ## in-app purchases. It can be found on the "Services & APIs" page of the Google
@@ -286,13 +289,43 @@ image prompto widelaugh = "images/characters/prompto_widelaugh.png"
 image bg snowy_plains = 'images/backgrounds/snowy_plains.png'
 image bg distant_mountain = 'images/backgrounds/distant_mountain.png'
 image bg plains_with_mountain = 'images/backgrounds/plains_with_mountain.png'
+image bg cavern = 'images/backgrounds/cavern.png'
+image bg black = "images/backgrounds/black_bg.png"
+image bg yellow = "images/backgrounds/yellow_bg.png"
 
-# image snow = "images/sprites/black_snow.png"
-image snow = SnowBlossom("images/sprites/big_snow.png", count=50)
+#image snow = SnowBlossom("images/sprites/big_snow.png", count=50)
+
+# Animations and transitions #
+
+image snow:
+        choice (show_snow == True):
+            Fixed(
+                    SnowBlossom(im.Alpha("images/sprites/big_snow.png",0.75), count=2, start=10, yspeed=(40,80)),
+                    SnowBlossom(im.Alpha("images/sprites/medium_snow.png",0.9), count=7, start=10, yspeed=(40,80)),
+                    SnowBlossom(im.Alpha("images/sprites/small_snow.png",0.95), count=10, start=10, yspeed=(40,80)),
+                    SnowBlossom(im.Alpha("images/sprites/tiny_snow.png",0.99), count=20, start=5, yspeed=(40,80)) )
+        choice (show_snow == False):
+            Fixed(
+                    SnowBlossom(im.Alpha("images/sprites/big_snow.png",0.0), count=1, start=10, yspeed=(40,80)),
+                    SnowBlossom(im.Alpha("images/sprites/medium_snow.png",0.0), count=1, start=10, yspeed=(40,80)),
+                    SnowBlossom(im.Alpha("images/sprites/small_snow.png",0.0), count=1, start=10, yspeed=(40,80)),
+                    SnowBlossom(im.Alpha("images/sprites/tiny_snow.png",0.0), count=1, start=5, yspeed=(40,80)) )
 
 
-image snow = Fixed(
-        SnowBlossom(im.Alpha("images/sprites/big_snow.png",0.75), count=2, start=10, yspeed=(40,80)),
-        SnowBlossom(im.Alpha("images/sprites/medium_snow.png",0.9), count=7, start=10, yspeed=(40,80)),
-        SnowBlossom(im.Alpha("images/sprites/small_snow.png",0.95), count=10, start=10, yspeed=(40,80)),
-        SnowBlossom(im.Alpha("images/sprites/tiny_snow.png",0.99), count=20, start=5, yspeed=(40,80)) )
+define slowfade = Fade(2.0, 0.0, 2.0)
+define slowdissolve = Dissolve(8)
+define mediumdissolve = Dissolve(5)
+
+
+
+# MUSIC #
+
+define config.main_menu_music = "sound/menu.wav"
+define audio.menu = "sound/menu.wav"
+define audio.credits = "sound/credits.wav"
+define audio.snowplains = "sound/snowplains.wav"
+define audio.footsteps = "sound/footsteps.wav"
+define audio.breath_in = "sound/breath_in.wav"
+define audio.thunder = "sound/thunder.wav"
+define audio.thunder_distant = "sound/thunder_distant.wav"
+define audio.magitek = "sound/magitek.wav"

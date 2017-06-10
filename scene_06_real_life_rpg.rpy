@@ -50,6 +50,8 @@ label real_life_rpg:
 
 label hug:
 
+    stop sound fadeout 1.0
+
     "You stop moving forward."
 
     show prompto surprised
@@ -61,9 +63,9 @@ label hug:
 
     you "You don't sound like a stuck record."
 
-    "And you hug him tight. Your hands are in a non-threatening position across his back and shoulders, and you simply focus on pouring out compassion, ready to stop should he give any indication he's uncomfortable. You barely know this man, but you can't stand to see him beat himself up."
+    "And you hug him tight. Your hands clasp softly across his back and shoulders, and you simply focus on pouring out compassion, ready to stop should he give any indication he's uncomfortable. You barely know this man, but you can't stand to see him beat himself up."
 
-    show prompto raisedeyes_closed # need eyesclosed version
+    show prompto raisedeyes_closed
     with dissolve
 
     "He leans into the hug."
@@ -95,6 +97,8 @@ label hug:
     prompto "Whew! Uh, that wasn't what I expected, but it... it was nice. Thanks."
 
     you "Hey, no problem - I just hope it helped."
+
+    play sound footsteps loop
 
     jump continue_to_cavern
 
@@ -183,23 +187,25 @@ label no_hug:
 
     prompto "I should go."
 
-    if happiness <= 3:
-
-        "He walks away."
+    if happiness <= 4:
 
         prompto "I'll find my way to Niflheim on my own. Please don't follow me."
 
+        "He walks away."
+
+        hide prompto frightened_tightlipped
+        with dissolve
         # need an image of his back here
 
-        "You're left staring after him. His silhouette cuts a lonely figure against the snowy plains."
-
         "You call out, say something about how it isn't his fault, how you didn't mean to make him sad, but he's no longer listening."
+
+        "You're left staring after him. His silhouette cuts a lonely figure against the snowy plains."
 
         "Soon you can't see him at all."
 
         "The wind chill increases. You gather your clothes closer about you, and trudge off once more into the wilderness."
 
-        return
+        jump credits
 
     $ happiness += 0
 
@@ -219,6 +225,10 @@ label no_hug:
     with dissolve
 
     you "No, please don't! I'm the one who's sorry, I'm not very good at this comforting thing."
+
+    prompto "You mean it?"
+
+    you "Yeah. I just... well, I suck at it, okay? I didn't mean to make you feel bad."
 
     prompto "Well... if you say so."
 
@@ -242,6 +252,8 @@ label continue_to_cavern:
 
     "It's a variation on a musical number you remember seeing once in Tenebrae. You remember the film was about a sharpshooter, and you find it kind of cute, all things considered, that he'd be singing it."
 
+    "Either way, you laugh at the snow pun."
+
     "He trails off, and you remember the next lines, and you don't supply them, although the words ring in your head just the same.{p=0.5}{i}Ain't no people like show people, they smile when they are low.{/i}"
 
     if happiness <= 4:
@@ -253,3 +265,5 @@ label continue_to_cavern:
     else:
 
         "The mood feels considerably lighter, however, and time seems to pass quickly."
+
+    jump inside_haven

@@ -11,7 +11,10 @@
 # -- scene_03_niflheim.rpy
 # -- scene_04_tomountainhaven.rpy
 # -- scene_05_human.rpy
-# -- scene_05_campfire.rpy
+# -- scene_06_real_life_rpg.rpy
+# -- scene_07_campfire_food.rpy
+# -- credits.rpy
+
 
 
 #### SPLASHSCREEN ####
@@ -21,6 +24,17 @@ image author = "images/logos/author.png"
 image title = "images/logos/title.png"
 
 label splashscreen:
+
+    python:
+
+        if not persistent.set_volumes:
+            persistent.set_volumes = True
+
+            _preferences.volumes['music'] = .80
+            _preferences.volumes['sound'] = .80
+
+    play music "sound/menu.wav"
+
     scene black
     with Pause(1)
 

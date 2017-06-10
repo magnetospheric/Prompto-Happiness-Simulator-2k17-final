@@ -37,11 +37,15 @@ label to_mountain_haven:
         time 1.5
         linear 0.5 alpha 1.0
 
+    play sound thunder noloop
+
     "There's a sound on the horizon like a gunshot. {alpha=0.0}ooooooooooooooooooooooooooooooooooooo{/alpha}{nw}" # 3.5 second delay
 
     "There's a sound on the horizon like a gunshot.{fast} Prompto flinches."
 
     "You snap to attention, fearing it may be some of those troopers Prompto has been running from.{p=0.5}But it's just thunder."
+
+    play sound thunder_distant noloop
 
     prompto "I sure don't like the look of those snow clouds."
 
@@ -66,6 +70,8 @@ label to_mountain_haven:
 
     scene bg snowy_plains
 
+    show snow
+
     show prompto surprised
     with dissolve
 
@@ -82,6 +88,10 @@ label to_mountain_haven:
 
     scene bg plains_with_mountain
     with dissolve
+
+    show snow
+
+    play sound footsteps loop
 
     if happiness <= 2:
 
@@ -102,9 +112,13 @@ label to_mountain_haven:
 
             "A trail bar":
 
+                $ trailbar_selected = True
+
                 jump trailbar
 
             "A tangerine":
+
+                $ tangerine_selected = True
 
                 jump tangerine
 

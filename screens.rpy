@@ -219,7 +219,7 @@ style choice_button_text is button_text:
 
 style choice_vbox:
     xalign 0.5
-    ypos 450
+    ypos 448
     yanchor 0.5
 
     spacing 1
@@ -261,7 +261,7 @@ default back_next_button = None
 init python:
     config.overlay_screens.append("quick_menu")
 
-default quick_menu = True
+default quick_menu = False
 
 style quick_button is default
 style quick_button_text
@@ -345,22 +345,22 @@ screen navigation():
             spacing 0
 
             textbutton _("{k=-0.4}SAVE{/k}"):
-                style "menu_item_ingame1"
+                style "menu_item_ingame"
                 text_style "ingame_menu_item_text"
                 action ShowMenu("save")
 
             textbutton _("{k=-0.4}LOAD{/k}"):
-                style "menu_item_ingame2"
+                style "menu_item_ingame"
                 text_style "ingame_menu_item_text"
                 action ShowMenu("load")
 
             textbutton _("{k=-0.4}OPTIONS{/k}"):
-                style "menu_item_ingame3"
+                style "menu_item_ingame"
                 text_style "ingame_menu_item_text"
                 action ShowMenu("preferences")
 
             textbutton _("{k=-0.4}ABOUT{/k}"):
-                style "menu_item_ingame4"
+                style "menu_item_ingame"
                 text_style "ingame_menu_item_text"
                 action ShowMenu("about")
 
@@ -370,7 +370,7 @@ screen navigation():
 
 
             textbutton _("{k=-0.4}MAIN MENU{/k}"):
-                style "menu_item_ingame5"
+                style "menu_item_ingame"
                 text_style "ingame_menu_item_text"
                 action MainMenu()
 
@@ -378,13 +378,13 @@ screen navigation():
 
                     ## Help isn't necessary or relevant to mobile devices.
                     textbutton _("{k=-0.4}HELP{/k}"):
-                        style "menu_item_ingame6"
+                        style "menu_item_ingame"
                         text_style "ingame_menu_item_text"
                         action ShowMenu("help")
 
                     ## The quit button is banned on iOS and unnecessary on Android.
                     textbutton _("{k=-0.4}QUIT{/k}"):
-                        style "menu_item_ingame7"
+                        style "menu_item_ingame"
                         text_style "ingame_menu_item_text"
                         action Quit(confirm=not main_menu)
 
@@ -430,21 +430,8 @@ style menu_item_5:
 style menu_item_6:
     left_margin 90
 
-style menu_item_ingame1:
+style menu_item_ingame:
     left_margin 20
-style menu_item_ingame2:
-    left_margin 20
-style menu_item_ingame3:
-    left_margin 20
-style menu_item_ingame4:
-    left_margin 20
-style menu_item_ingame5:
-    left_margin 20
-style menu_item_ingame6:
-    left_margin 20
-style menu_item_ingame7:
-    left_margin 20
-
 
 ## Main Menu screen ############################################################
 ##

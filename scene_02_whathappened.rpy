@@ -13,6 +13,8 @@ label what_happened:
 
     you "Did you see the Magitek Troopers come this way?"
 
+    play sound breath_in noloop
+
     show prompto frightened
     with dissolve
 
@@ -46,14 +48,30 @@ label what_happened:
 
     "You're overcome with the urge to protect him."
 
+    show prompto frightened_sidecast
+    with dissolve
+
+    "He wrestles with his thoughts for a while. You're tempted to reach out to him, but it's best not to frighten him while he's holding the weapon.{p=0.5}Just in case."
+
+    "The air feels suddenly bitter. Feels like there's eyes everywhere. Perhaps his jumpiness is rubbing off on you?"
+
+    show prompto dubious
+    with dissolve
+
+    "But it soon subsides. The moment over, he tucks the weapon back into his pocket, and raises his eyes to yours once more."
+
     show prompto surprised
     with dissolve
 
-    "The moment over, he tucks the weapon back into his pocket, and raises his eyes to yours once more."
-
     prompto "I'm not planning on using it. Unless those soldiers come back."
 
+    show prompto dubious
+    with dissolve
+
     you "Hey, I'm not scared.{p=0.5}Just... worried, I guess. I mean, when I saw the Magitek troopers further down the valley, I wondered what was going on. This is the middle of nowhere."
+
+    show prompto surprised
+    with dissolve
 
     prompto "Did they see you come this way?"
 
@@ -88,6 +106,7 @@ label setname:
     "[your_name], is that right?"
 
 label justtobesure:
+
     menu:
         "Yes":
             jump after_user_name_set
@@ -110,7 +129,7 @@ label after_user_name_set:
 
     "He raises his eyes to the sky. The sun is pale and the way it glints off his hair reminds you of catkins in spring. He looks positively angelic, but whatever he's thinking about is clearly not so."
 
-    prompto "Oh gods, where do I begin.{p=0.5}What's happening ... it feels like it's all my fault."
+    prompto "Oh gods, where do I begin?{p=0.5}What's happening ... it feels like it's all my fault."
 
     "You wait patiently for him to continue.{p=0.5}Your toes feel more frozen than ever, even through your thick boots, but you don't shift. You don't want to stop him now."
 

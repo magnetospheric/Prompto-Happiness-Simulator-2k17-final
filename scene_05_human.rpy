@@ -13,6 +13,10 @@ label human:
 
     "Prompto, on the other hand, looks just as angelic as ever. Not even a red flush from the exertion."
 
+    play sound magitek noloop
+
+    pause 0.2
+
     show prompto dubious_sidecast
     with dissolve
 
@@ -21,6 +25,8 @@ label human:
     "It had been doing its evening patrol in Gralea, and something had gone wrong in its circuitry, presumably.{p=0.5}But you'll never forget how it sounded pained, shrieking like a dying animal."
 
     "Prompto seems shaken by the noise."
+
+    play sound footsteps loop
 
     if happiness <= 3:
 
@@ -49,6 +55,8 @@ label human:
         with dissolve
 
         "He looks off to the side. There's something haunted in the way he does it, like he's expecting shadows round every corner."
+
+        "What an odd question. You don't quite know how to answer it, and in the time you spend deliberating, Prompto continues to talk."
 
         prompto "He makes me doubt everything."
 
@@ -157,9 +165,14 @@ label noctis:
 
     prompto "No, it's okay."
 
-    $ happiness += 0
+    show prompto calmsmile
+    with dissolve
 
-    show expression Text("No increase in happiness",
+    prompto "I know you meant well."
+
+    $ happiness += 1
+
+    show expression Text("Slight increase in happiness",
     size=35,
     yalign=0.5,
     xalign=0.5,
