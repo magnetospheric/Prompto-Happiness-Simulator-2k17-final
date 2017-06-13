@@ -291,7 +291,8 @@ image bg distant_mountain = 'images/backgrounds/distant_mountain.png'
 image bg plains_with_mountain = 'images/backgrounds/plains_with_mountain.png'
 image bg cavern = 'images/backgrounds/cavern.png'
 image bg black = "images/backgrounds/black_bg.png"
-image bg yellow = "images/backgrounds/yellow_bg.png"
+image black = "images/backgrounds/black_bg.png"
+image yellow = "images/backgrounds/yellow_bg.png"
 
 #image snow = SnowBlossom("images/sprites/big_snow.png", count=50)
 
@@ -315,6 +316,7 @@ image snow:
 define slowfade = Fade(2.0, 0.0, 2.0)
 define slowdissolve = Dissolve(8)
 define mediumdissolve = Dissolve(5)
+define fastdissolve = Dissolve(2)
 
 
 

@@ -5,31 +5,30 @@ image credit = "images/logos/credit.png"
 
 label credits:
 
+    scene bg cavern
+
     $ show_happiness = False
-    $ quick_menu = False
 
     play music "sound/credits.wav" fadein 3.0
 
-    scene bg yellow
-    with slowdissolve
+    $ quick_menu = False
+    
+    show black
+    with fastdissolve
+    $ renpy.pause(2.0, hard = True)
 
-    pause 2
-
-    scene bg black
-    with slowdissolve
 
     show fin with dissolve
-    with Pause(4)
+    $ renpy.pause(4.0, hard = True)
 
-    scene credit with dissolve
-    with Pause(6)
+    show credit with dissolve
+    $ renpy.pause(6.0, hard = True)
 
-
-    scene bg black
+    show black
     with slowdissolve
 
     stop music fadeout 3.0
 
-    pause 3
+    $ renpy.pause(3.0, hard = True)
 
     return

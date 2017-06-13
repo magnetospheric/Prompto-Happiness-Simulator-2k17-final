@@ -260,6 +260,21 @@ default back_next_button = None
 ## the player has not explicitly hidden the interface.
 init python:
     config.overlay_screens.append("quick_menu")
+    config.overlay_screens.append("disable_keys")
+
+    # overriding_on = False
+    # def overriding_overlay():
+    #     if not overriding_on:
+    #         return
+    #     else:
+    #         ui.keymap(mousedown_1=ui.returns(None))
+    #         ui.keymap(mouseup_1=ui.returns(None))
+    #         # ui.keymap(mousedown_3=ui.returns(None))
+    #         # ui.keymap(mouseup_3=ui.returns(None))
+    #         # ui.keymap(I=ui.returns('False'))
+
+    #config.overlay_functions.append(overriding_overlay)
+
 
 default quick_menu = False
 
@@ -1634,3 +1649,15 @@ style slider_pref_vbox:
 style slider_pref_slider:
     variant "small"
     xsize 600
+
+
+screen disable_keys():
+
+    zorder 999
+
+    # key "mouseup_1" action NullAction()
+    # key "mousedown_1" action NullAction()
+    # key "mouseup_2" action NullAction()
+    # key "mousedown_2" action NullAction()
+    # key "K_SPACE" action NullAction()
+    # key "mouseup_1" action NullAction()

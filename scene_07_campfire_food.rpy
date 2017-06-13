@@ -201,20 +201,39 @@ label campfire_comfort:
 
     "He may not be aware of it himself, but he's leaned forwards slightly as you've been speaking."
 
-    menu:
+    if already_hugged == True:
 
-        "Hug him again":
+        menu:
 
-            jump end
+            "Hug him again":
 
-        "Keep your distance":
+                jump end
 
-            jump end_nohug
+            "Keep your distance":
+
+                jump end_nohug
+    else:
+
+        menu:
+
+            "Hug him again":
+
+                jump end
+
+            "Keep your distance":
+
+                jump end_nohug
 
 
 label end:
 
-    "You surprise him with another hug. You haven't even given yourself time to think. It just felt right."
+    if already_hugged == True:
+
+        "You surprise him with another hug. You haven't even given yourself time to think. It just felt right."
+
+    else:
+
+        "You surprise him with a hug. You haven't even given yourself time to think. It just felt right."
 
     you "Whatever's happened, you didn't deserve it. Neither you nor your friend."
 
@@ -255,12 +274,12 @@ label end:
 
     stop music fadeout 3.0
 
-    pause 1.5
+    $ renpy.pause(1.0, hard = True)
 
     hide prompto sadsmile
     with dissolve
 
-    pause 1
+    $ renpy.pause(1.0, hard = True)
 
     jump credits
 
@@ -283,11 +302,11 @@ label end_nohug:
 
     stop music fadeout 3.0
 
-    pause 1.5
+    $ renpy.pause(1.0, hard = True)
 
     hide prompto calmsmile
     with dissolve
 
-    pause 1
+    $ renpy.pause(1.0, hard = True)
 
     jump credits

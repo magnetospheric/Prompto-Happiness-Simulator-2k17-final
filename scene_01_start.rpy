@@ -1,17 +1,18 @@
 #### Game Start ####
 
 #testing
-label starttest:
+label start:
 
     # TESTING NIFLHEIM #
     # set my starting variables:
     $ happiness = 13
 
-    $ show_happiness = False
+    $ show_happiness = True
+    $ quick_menu = True
     $ show_snow = True
     $ trailbar_selected = False
     $ tangerine_selected = False
-
+    $ already_hugged = False
     $ prompto_name = "Prompto"
     $ your_name = "You"
 
@@ -20,9 +21,9 @@ label starttest:
     show prompto dubious
     with dissolve
 
-    jump inside_haven
+    jump end
 
-label start:
+label startn:
 
     # set my starting variables:
     $ happiness = 2
@@ -31,34 +32,34 @@ label start:
     $ show_snow = True
     $ trailbar_selected = False
     $ tangerine_selected = False
+    $ already_hugged = False
 
     $ prompto_name = "Stranger"
     $ your_name = "You"
 
-    scene bg black
+    show black
     with slowfade
-
     play music snowplains loop
-
     # have some snowflake effects cross the screen
     show snow
 
-    pause 5
+    $ renpy.pause(2.0, hard = True)
 
-    scene bg yellow
-    with slowdissolve
-
+    show yellow
+    with mediumdissolve
     # have some snowflake effects cross the screen
     show snow
-
     play sound footsteps loop
+
+    $ renpy.pause(1.0, hard = True)
 
     # set the scene with slow transition
     scene bg snowy_plains
-    with slowdissolve
-
+    with mediumdissolve
     # have some snowflake effects cross the screen
     show snow
+
+    $ renpy.pause(2.0, hard = True)
 
     $ quick_menu = True
 
