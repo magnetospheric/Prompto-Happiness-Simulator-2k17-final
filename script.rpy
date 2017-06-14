@@ -31,7 +31,7 @@ label splashscreen:
             persistent.set_volumes = True
 
             _preferences.volumes['music'] = .80
-            _preferences.volumes['sound'] = .80
+            _preferences.volumes['sounds'] = .80
 
     play music "sound/menu.wav"
 

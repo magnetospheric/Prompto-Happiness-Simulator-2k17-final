@@ -272,8 +272,6 @@ label end:
 
     "You made his day somewhat brighter, and for that you're grateful."
 
-    $ renpy.hide_screen("say")
-
     "You smile at each other, both glad to have such good company, as the day fades slowly into night."
 
     $ show_happiness = False
@@ -281,6 +279,8 @@ label end:
     $ quick_menu = False
 
     stop music fadeout 3.0
+
+    $ renpy.pause(3.0, hard = True)
 
     play music "sound/credits.wav" fadein 3.0
 
@@ -313,13 +313,22 @@ label end_nohug:
 
     "But for now, he is content."
 
+    $ show_happiness = False
+
+    $ quick_menu = False
+
     stop music fadeout 3.0
 
-    $ renpy.pause(1.0, hard = True)
+    $ renpy.pause(3.0, hard = True)
 
-    hide prompto calmsmile
-    with dissolve
+    play music "sound/credits.wav" fadein 3.0
 
-    $ renpy.pause(1.0, hard = True)
+    scene bg cavern
 
-    jump credits
+    show prompto calmsmile
+
+    menu:
+
+        ".":
+
+            jump credits

@@ -17,11 +17,11 @@ label credits:
     show fin with dissolve
     $ renpy.pause(6.0, hard = True)
 
-    show fin with dissolve
+    show thanks with dissolve
     $ renpy.pause(6.0, hard = True)
 
     show credit with dissolve
-    $ renpy.pause(6.0, hard = True)
+    $ renpy.pause(4.0, hard = True)
 
     show black
     with slowdissolve

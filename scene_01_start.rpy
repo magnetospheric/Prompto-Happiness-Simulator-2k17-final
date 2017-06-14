@@ -1,7 +1,7 @@
 #### Game Start ####
 
 #testing
-label start:
+label startn:
 
     # TESTING NIFLHEIM #
     # set my starting variables:
@@ -23,9 +23,9 @@ label start:
     show prompto dubious
     with dissolve
 
-    jump end
+    jump end_nohug
 
-label startn:
+label start:
 
     # set my starting variables:
     $ happiness = 2
@@ -36,6 +36,7 @@ label startn:
     $ tangerine_selected = False
     $ already_hugged = False
     $ results = True
+    $ show_say = True
     $ prompto_name = "Stranger"
     $ your_name = "You"
 
