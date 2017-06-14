@@ -265,4 +265,8 @@ label nofood:
 
     prompto "Ah... no, thanks."
 
+    "You aren't surprised he refuses. He's still suspicious of you, after all."
+
+    "You walk on in silence."
+
     jump human

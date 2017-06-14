@@ -317,6 +317,8 @@ label end_nohug:
 
     $ quick_menu = False
 
+    $ results = True
+
     stop music fadeout 3.0
 
     $ renpy.pause(3.0, hard = True)

@@ -29,6 +29,8 @@ label real_life_rpg:
 
     "He looks pretty upset. It's clear he's blaming himself. You know this is the perfect moment to do something, so you..."
 
+    stop sound fadeout 1.0
+
     menu:
 
         "Hug him":
@@ -49,8 +51,6 @@ label real_life_rpg:
 
 
 label hug:
-
-    stop sound fadeout 1.0
 
     "You stop moving forward."
 
@@ -205,6 +205,31 @@ label no_hug:
 
         "The wind chill increases. You gather your clothes closer about you, and trudge off once more into the wilderness."
 
+        "What a strange encounter. Maybe it was better you didn't get too involved. But, then again, perhaps you could have done something to help."
+
+        $ show_happiness = False
+
+        $ quick_menu = False
+
+        $ results = True
+
+        stop music fadeout 3.0
+
+        $ renpy.pause(3.0, hard = True)
+
+        play music "sound/credits.wav" fadein 3.0
+
+        scene bg plains_with_mountain
+
+        show prompto frightened_tightlipped
+
+        menu:
+
+            ".":
+
+                jump credits
+
+
         jump credits
 
     $ happiness += 0
@@ -236,6 +261,8 @@ label no_hug:
 
 
 label continue_to_cavern:
+
+    play sound footsteps loop
 
     you "Let's keep going, then. We're almost there."
 

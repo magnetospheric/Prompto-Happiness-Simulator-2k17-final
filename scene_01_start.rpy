@@ -30,12 +30,12 @@ label start:
     # set my starting variables:
     $ happiness = 2
 
-    $ show_happiness = False
+    $ show_happiness = True
     $ show_snow = True
     $ trailbar_selected = False
     $ tangerine_selected = False
     $ already_hugged = False
-    $ results = True
+    $ results = False
     $ show_say = True
     $ prompto_name = "Stranger"
     $ your_name = "You"

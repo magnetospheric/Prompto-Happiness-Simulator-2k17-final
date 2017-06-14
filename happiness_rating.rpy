@@ -18,7 +18,9 @@ init python:
 
             ui.vbox(xalign = 0)
 
-            ui.text ("HAPPINESS",
+            string_happiness = "%d" % happiness
+
+            ui.text ("HAPPINESS: " + string_happiness,
                 xalign = 0.05,
                 ypos = 2,
                 color = "#ededda",
@@ -75,7 +77,7 @@ init python:
     #
     #
     # config.overlay_functions.append(stats_overlay)
-    # 
+    #
 
 init -2 python:
     happiness = 2

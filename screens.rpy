@@ -222,7 +222,10 @@ screen choice(items):
 
         vbox:
             for i in items:
-                imagebutton idle 'ui/result/rating-max.png' hover 'ui/result/rating-max-hover.png' action i.action
+                if happiness <= 2:
+                    imagebutton idle 'ui/result/rating-lowest.png' hover 'ui/result/rating-lowest-hover.png' action i.action
+                else:
+                    imagebutton idle 'ui/result/rating-max.png' hover 'ui/result/rating-max-hover.png' action i.action
     else:
 
         style_prefix "choice"
