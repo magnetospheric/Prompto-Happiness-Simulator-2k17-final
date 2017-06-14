@@ -229,6 +229,9 @@ label end:
 
     scene bg cavern
 
+    show prompto surprised
+    with dissolve
+
     if already_hugged == True:
 
         "You surprise him with another hug. You haven't even given yourself time to think. It just felt right."
@@ -277,6 +280,8 @@ label end:
     $ show_happiness = False
 
     $ quick_menu = False
+
+    $ results = True
 
     stop music fadeout 3.0
 

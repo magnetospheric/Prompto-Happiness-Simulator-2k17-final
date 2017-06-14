@@ -29,7 +29,7 @@ define config.version = "1.0"
 ## Text that is placed on the game's about screen. To insert a blank line
 ## between paragraphs, write \n\n.
 
-define gui.about = _("")
+define gui.about = _("This is a noncommercial fanwork. Final Fantasy XV, and all characters and settings, are property of Square Enix, and this work does not represent Square Enix in any way. Original content (code, assets, music) is copyrighted under a Creative Commons license (Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) ).")
 
 
 ## A short name for the game used for executables and directories in the built

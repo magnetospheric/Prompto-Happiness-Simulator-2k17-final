@@ -224,6 +224,14 @@ screen choice(items):
             for i in items:
                 if happiness <= 2:
                     imagebutton idle 'ui/result/rating-lowest.png' hover 'ui/result/rating-lowest-hover.png' action i.action
+                elif happiness <= 6:
+                    imagebutton idle 'ui/result/rating-low.png' hover 'ui/result/rating-low-hover.png' action i.action
+                elif happiness <= 11:
+                    imagebutton idle 'ui/result/rating-medium.png' hover 'ui/result/rating-medium-hover.png' action i.action
+                elif happiness <= 14:
+                    imagebutton idle 'ui/result/rating-high.png' hover 'ui/result/rating-high-hover.png' action i.action
+                elif happiness <= 17:
+                    imagebutton idle 'ui/result/rating-veryhigh.png' hover 'ui/result/rating-veryhigh-hover.png' action i.action
                 else:
                     imagebutton idle 'ui/result/rating-max.png' hover 'ui/result/rating-max-hover.png' action i.action
     else:
@@ -798,6 +806,9 @@ style about_text is gui_text
 
 style about_label_text:
     size gui.label_text_size
+
+style about_text:
+    size 18
 
 
 ## Load and Save screens #######################################################

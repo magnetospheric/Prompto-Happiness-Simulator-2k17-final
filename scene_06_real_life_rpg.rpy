@@ -74,6 +74,8 @@ label hug:
 
     $ happiness += 3
 
+    $ already_hugged == True
+
     show expression Text("Happiness increased a lot!",
     size=35,
     yalign=0.5,

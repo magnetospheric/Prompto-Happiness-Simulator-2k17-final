@@ -30,7 +30,7 @@ label start:
     # set my starting variables:
     $ happiness = 2
 
-    $ show_happiness = True
+    $ show_happiness = False
     $ show_snow = True
     $ trailbar_selected = False
     $ tangerine_selected = False
