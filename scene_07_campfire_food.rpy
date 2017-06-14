@@ -227,6 +227,8 @@ label campfire_comfort:
 
 label end:
 
+    scene bg cavern
+
     if already_hugged == True:
 
         "You surprise him with another hug. You haven't even given yourself time to think. It just felt right."
@@ -270,18 +272,29 @@ label end:
 
     "You made his day somewhat brighter, and for that you're grateful."
 
+    $ renpy.hide_screen("say")
+
     "You smile at each other, both glad to have such good company, as the day fades slowly into night."
+
+    $ show_happiness = False
+
+    $ quick_menu = False
 
     stop music fadeout 3.0
 
-    $ renpy.pause(1.0, hard = True)
+    play music "sound/credits.wav" fadein 3.0
 
-    hide prompto sadsmile
-    with dissolve
+    scene bg cavern
 
-    $ renpy.pause(1.0, hard = True)
+    show prompto sadsmile
 
-    jump credits
+    menu:
+
+        ".":
+
+            jump credits
+
+
 
 label end_nohug:
 

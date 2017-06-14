@@ -317,6 +317,7 @@ define slowfade = Fade(2.0, 0.0, 2.0)
 define slowdissolve = Dissolve(8)
 define mediumdissolve = Dissolve(5)
 define fastdissolve = Dissolve(2)
+define fastestdissolve = Dissolve(1)
 
 
 

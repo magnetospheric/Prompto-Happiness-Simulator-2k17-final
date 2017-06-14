@@ -32,6 +32,51 @@ init python:
 
     config.overlay_functions.append(stats_overlay)
 
+
+    # def end_rating():
+    #
+    #     # --- Happiness Bar -------
+    #     if show_rating:
+    #
+    #         # set up a transparent frame to put things in
+    #         ui.frame(
+    #         xalign = 0.96,
+    #         ypos = 0.04,
+    #         style = "title_frame",
+    #         )
+    #
+    #         ui.vbox(xalign = 0)
+    #
+    #         if happiness == 20:
+    #
+    #
+    #
+    #         ui.close() #closes vbox
+    #         # elif happiness >= 18:
+    #         #
+    #         # elif happiness >= 15:
+    #         #
+    #         # elif happiness >= 11:
+    #         #
+    #         # elif happiness >= 6:
+    #         #
+    #         # elif happiness >= 2:
+    #
+    #         ui.text ("HAPPINESS",
+    #             xalign = 0.05,
+    #             ypos = 2,
+    #             color = "#ededda",
+    #             size=20)
+    #
+    #         ui.bar(max_happiness, happiness,
+    #             style="my_bar")
+    #
+    #
+    #
+    #
+    # config.overlay_functions.append(stats_overlay)
+    # 
+
 init -2 python:
     happiness = 2
     max_happiness = 18.6

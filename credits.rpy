@@ -1,25 +1,24 @@
 #### CREDITS ####
 
 image fin = "images/logos/fin.png"
+image thanks = "images/logos/thanks.png"
 image credit = "images/logos/credit.png"
 
 label credits:
 
+    $ show_say = False
+
     scene bg cavern
 
-    $ show_happiness = False
-
-    play music "sound/credits.wav" fadein 3.0
-
-    $ quick_menu = False
-    
     show black
-    with fastdissolve
-    $ renpy.pause(2.0, hard = True)
-
+    with fastestdissolve
+    $ renpy.pause(1.0, hard = True)
 
     show fin with dissolve
-    $ renpy.pause(4.0, hard = True)
+    $ renpy.pause(6.0, hard = True)
+
+    show fin with dissolve
+    $ renpy.pause(6.0, hard = True)
 
     show credit with dissolve
     $ renpy.pause(6.0, hard = True)

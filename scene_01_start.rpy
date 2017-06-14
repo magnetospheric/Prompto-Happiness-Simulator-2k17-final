@@ -13,6 +13,8 @@ label start:
     $ trailbar_selected = False
     $ tangerine_selected = False
     $ already_hugged = False
+    $ results = True
+    $ show_say = True
     $ prompto_name = "Prompto"
     $ your_name = "You"
 
@@ -33,7 +35,7 @@ label startn:
     $ trailbar_selected = False
     $ tangerine_selected = False
     $ already_hugged = False
-
+    $ results = True
     $ prompto_name = "Stranger"
     $ your_name = "You"
 

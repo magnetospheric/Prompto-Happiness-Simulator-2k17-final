@@ -96,10 +96,16 @@ style frame:
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
 screen say(who, what):
+
+    tag say
+
     style_prefix "say"
 
     window:
-        id "window"
+        if show_say:
+            id "window"
+        else:
+            id "window_transparent"
 
         if who is not None:
 
@@ -110,13 +116,14 @@ screen say(who, what):
         text what id "what"
 
 
-    ## If there's a side image, display it above the text. Do not display on the
-    ## phone variant - there's no room.
-    if not renpy.variant("small"):
-        add SideImage() xalign 0.0 yalign 1.0
+        ## If there's a side image, display it above the text. Do not display on the
+        ## phone variant - there's no room.
+        if not renpy.variant("small"):
+            add SideImage() xalign 0.0 yalign 1.0
 
 
 style window is default
+style window_transparent is default
 style say_label is default
 style say_dialogue is default
 style say_thought is say_dialogue
@@ -132,6 +139,14 @@ style window:
     ysize gui.textbox_height
 
     background Image("ui/dialog_bg.png", xalign=0.5, yalign=1.0)
+
+style window_transparent:
+    xalign 0.5
+    xfill True
+    yalign gui.textbox_yalign
+    ysize gui.textbox_height
+
+    background Image("ui/dialog_bg_transparent.png", xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
@@ -200,11 +215,21 @@ style input:
 ## http://www.renpy.org/doc/html/screen_special.html#choice
 
 screen choice(items):
-    style_prefix "choice"
 
-    vbox:
-        for i in items:
-            textbutton i.caption action i.action
+    if results == True:
+
+        style_prefix "results"
+
+        vbox:
+            for i in items:
+                imagebutton idle 'ui/result/rating-max.png' hover 'ui/result/rating-max-hover.png' action i.action
+    else:
+
+        style_prefix "choice"
+
+        vbox:
+            for i in items:
+                textbutton i.caption action i.action
 
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
@@ -221,7 +246,6 @@ style choice_vbox:
     xalign 0.5
     ypos 448
     yanchor 0.5
-
     spacing 1
 
 style choice_button:
@@ -231,6 +255,32 @@ style choice_button:
 
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
+
+
+style results_vbox is vbox
+style results_button is button
+style results_button_text is button_text:
+    ypos 2
+
+style results_vbox:
+    xalign 0.5
+    ypos 380
+    yanchor 0
+    spacing 0
+
+style results_button:
+    xmaximum 400
+    ymaximum 126
+    properties gui.button_properties("results_button")
+    # background "ui/result/rating-max.png"
+    # hover_background "ui/result/rating-max-hover.png"
+
+style results_button_text is default:
+    xminimum 400
+    yminimum 126
+    properties gui.button_text_properties("results_button")
+
+
 
 ## Quick Menu screen ###########################################################
 ##
