@@ -41,10 +41,10 @@ label start:
     $ your_name = "You"
 
     show black
-    with slowfade
+    with mediumfade
     play music snowplains loop
     # have some snowflake effects cross the screen
-    show snow
+    show snow_startanimation
 
     $ renpy.pause(2.0, hard = True)
 
@@ -70,7 +70,7 @@ label start:
 
     "You've been walking for such a long time you can't feel your toes any more in your thick winter boots.{p=0.5}There's just the monotonous crunch-crunch-crunch of your footsteps on packed-down snow."
 
-    "The sun is high, reflecting on the crystalline ground, and at first you think you're all alone, but then you spot a figure moving amid the distant sunlit shimmers."
+    "The sun is high, reflecting on the crystalline ground, and at first you think you're all alone. But then you spot a figure moving amid the distant sunlit shimmers."
 
     "Another person?"
 

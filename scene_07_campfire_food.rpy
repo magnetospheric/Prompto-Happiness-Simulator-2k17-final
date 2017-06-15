@@ -92,7 +92,11 @@ label valley:
 
     you "Well, this mountain range isn't particularly special. Beyond it is said to be Shiva's domain."
 
-    you "The valley we just crossed is the Valley of Saint Lucis."
+    prompto "Guess that explains the crazy weather, huh?"
+
+    "You nod, then you motion back to the plains outside."
+
+    you "They call it Rusciello these days, but the valley we just crossed is the Valley of Saint Lucis."
 
     show prompto surprised
     with dissolve
@@ -132,32 +136,6 @@ label valley:
     prompto "Gods, I miss him."
 
     jump campfire_comfort
-
-
-label camera_ask:
-
-    menu:
-
-        "Mention the camera":
-
-            jump camera
-
-        "Leave it. There may be sad memories attached":
-
-            jump valley
-
-
-label camera:
-
-    "You think now is probably a good time to change the subject."
-
-    you "Hey, is that a camera?"
-
-    you "Maybe you should take a photo now."
-
-    prompto "Oh, you mean, like a selfie?"
-
-    you "Why not?"
 
 
 label campfire_comfort:
@@ -216,7 +194,7 @@ label campfire_comfort:
 
         menu:
 
-            "Hug him again":
+            "Hug him":
 
                 jump end
 

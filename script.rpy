@@ -30,10 +30,10 @@ label splashscreen:
         if not persistent.set_volumes:
             persistent.set_volumes = True
 
-            _preferences.volumes['music'] = .80
+            _preferences.volumes['music'] = .70
             _preferences.volumes['sounds'] = .80
 
-    play music "sound/menu.wav"
+    play music "sound/Voglio_La_Pace-Snippet.wav" fadein 1.0
 
     scene black
     with Pause(1)
@@ -41,10 +41,14 @@ label splashscreen:
     show producer with dissolve
     with Pause(2)
 
+
     scene author with dissolve
     with Pause(2)
 
+
     scene title with dissolve
-    with Pause(2)
+    with Pause(1)
+    stop music fadeout 0.5
+    pause 0.5
 
     return
