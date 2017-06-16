@@ -18,9 +18,7 @@ init python:
 
             ui.vbox(xalign = 0)
 
-            string_happiness = "%d" % happiness
-
-            ui.text ("HAPPINESS: " + string_happiness,
+            ui.text ("HAPPINESS",
                 xalign = 0.05,
                 ypos = 2,
                 color = "#ededda",

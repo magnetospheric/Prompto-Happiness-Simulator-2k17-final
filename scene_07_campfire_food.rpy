@@ -79,7 +79,7 @@ label inside_haven:
 
     else:
 
-        "While you fish out some packets of instant soup, Prompto leans back against the cavern wall and asks."
+        "While you fish out some packets of instant noodles, Prompto leans back against the cavern wall and asks."
 
     jump valley
 

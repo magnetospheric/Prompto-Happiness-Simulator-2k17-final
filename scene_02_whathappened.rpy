@@ -127,7 +127,7 @@ label after_user_name_set:
     show prompto raisedeyes
     with dissolve
 
-    "He raises his eyes to the sky. The sun is pale and the way it glints off his hair reminds you of catkins in spring. He looks positively angelic, but whatever he's thinking about is clearly not so."
+    "He raises his eyes to the sky. The sun is pale and the way it glints off his hair reminds you of catkins in spring. He looks positively angelic, but whatever he's thinking about is clearly not."
 
     prompto "Oh gods, where do I begin?{p=0.5}What's happening ... it feels like it's all my fault."
 
